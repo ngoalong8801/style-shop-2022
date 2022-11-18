@@ -30,12 +30,12 @@ class Login extends Controller
 
             if ($kq["result"]) {
                 if ($kq["role_id"] == 1) {
-                    header('Location: http://localhost/Shop/Home');
+                    header('Location: http://localhost/style-shop-2022/Home');
                 } else {
-                    header('Location: http://localhost/Shop/OrderAdmin');
+                    header('Location: http://localhost/style-shop-2022/OrderAdmin');
                 }
             } else {
-                header('Location: http://localhost/Shop/Login');
+                header('Location: http://localhost/style-shop-2022/Login');
             }
         }
     }
@@ -43,6 +43,6 @@ class Login extends Controller
     public function UserLogout()
     {  
         session_destroy();
-        header('Location: http://localhost/Shop/Home');
+        header('Location: http://localhost/style-shop-2022/Home');
     }
 }

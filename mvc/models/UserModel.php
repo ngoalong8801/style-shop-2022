@@ -17,8 +17,8 @@ class UserModel extends DB
                 "result" => $result
             ];
         } else {
-            $qr = "INSERT INTO user(fullname, email, phone_number, address, password, role_id)
-            VALUES('$fullname','$email','$phone_number','$address','$password',1)";
+            $qr = "INSERT INTO user(fullname, email, phone, address, password, role_id, deleted)
+            VALUES('$fullname','$email','$phone_number','$address','$password',1, 0)";
             $this->execute($qr);
             $result = true;
             return [

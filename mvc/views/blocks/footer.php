@@ -28,13 +28,13 @@
                 <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
                 <ul class="list-unstyled foot-desc">
                     <li class="mb-2">
-                        <a href="http://localhost/Shop/Home/productList/2">Iphone</a>
+                        <a href="http://localhost/style-shop-2022/Home/productList/2">Iphone</a>
                     </li>
                     <li class="mb-2">
-                        <a href="http://localhost/Shop/Home/productList/1">Samsung</a>
+                        <a href="http://localhost/style-shop-2022/Home/productList/1">Samsung</a>
                     </li>
                     <li class="mb-2">
-                        <a href="http://localhost/Shop/Home/productList/3">Xiaomi</a>
+                        <a href="http://localhost/style-shop-2022/Home/productList/3">Xiaomi</a>
                     </li>
                 </ul>
             </div>

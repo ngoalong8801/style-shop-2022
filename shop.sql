@@ -70,8 +70,8 @@ CREATE TABLE `feedback` (
 INSERT INTO `feedback` (`id`, `note`, `user_id`, `product_id`, `created_at`, `updated_at`, `status`) VALUES
 (52, 'Rất tốt', 50, 4, '2022-06-17 11:30:08', '2022-06-17 11:30:08', 0),
 (53, 'Sản phẩm tuyệt vời', 50, 1, '2022-06-18 06:02:08', '2022-06-18 06:02:08', 0),
-(54, 'Giá thành cạnh tranh nha', 53, 1, '2022-06-18 06:03:52', '2022-06-18 11:28:45', 1),
-(55, 'Tôi rất thích', 55, 1, '2022-06-19 02:50:21', '2022-06-19 02:50:21', 0);
+(54, 'Giá thành cạnh tranh nha', 51, 1, '2022-06-18 06:03:52', '2022-06-18 11:28:45', 1),
+(55, 'Tôi rất thích', 51, 1, '2022-06-19 02:50:21', '2022-06-19 02:50:21', 0);
 
 -- --------------------------------------------------------
 
@@ -97,8 +97,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `fullname`, `email`, `phone`, `user_id`, `status`, `deleted`, `address`, `created_at`, `total_money`) VALUES
-(58, 'Phuc Nguyen', 'customer1@gmail.com', '+84388542487', 56, 3, 0, 'Vĩnh Long', '2022-11-12 15:15:38', 25989999),
-(59, 'Phuc Nguyen', 'ninjavip1st@gmail.com', '+84388542487', 56, 3, 0, 'Vĩnh Long', '2022-11-12 15:18:05', 25990000);
+(58, 'User1', 'user1@gmail.com', '+84388542487', 50, 3, 0, 'Vĩnh Long', '2022-11-12 15:15:38', 25989999),
+(59, 'User2', 'user2@gmail.com', '+84388542487', 51, 3, 0, 'Vĩnh Long', '2022-11-12 15:18:05', 25990000);
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,7 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`id`, `order_id`, `user_id`, `money`, `note`) VALUES
-(11, 2147483647, 56, 25990000, 'Noi dung thanh toan');
+(11, 2147483647, 51, 25990000, 'Noi dung thanh toan');
 
 -- --------------------------------------------------------
 
@@ -248,14 +248,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `fullname`, `email`, `phone`, `address`, `password`, `role_id`, `deleted`, `avatar`) VALUES
-(46, 'admin', 'admin@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 2, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
-(50, 'Phuc Nguyen', 'user1@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn1.iconfinder.com/data/icons/people-avatars-23/24/people_avatar_head_spiderman_marvel_spider_man-512.png'),
-(51, 'Phúc Nguyễn', 'user2@gmail.com', '0388542487', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
-(52, 'Test 123', '123@123.com', '123', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 2, 1, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
-(53, 'Trọng Phúc', 'phuc.user@gmail.com', '09999999', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
-(54, 'Phúc Nguyễn', 'user3@gmail.com', '0906995989', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
-(55, 'Demo', 'demo@gmail.com', '0906995989', 'Vĩnh Long', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn-icons-png.flaticon.com/512/1674/1674291.png'),
-(56, 'Phuc Nguyen', 'customer1@gmail.com', '+84388542487', 'Vĩnh Long, Vũng Liêm', 'b4cbd48886a5331c5eb2fedadabe311c', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png');
+(46, 'admin', 'admin@gmail.com', '0388542487', 'Cao Bang', '123456', 2, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'),
+(50, 'User 1', 'user1@gmail.com', '0388542487', 'An giang', '123456', 1, 0, 'https://cdn1.iconfinder.com/data/icons/people-avatars-23/24/people_avatar_head_spiderman_marvel_spider_man-512.png'),
+(51, 'User 2', 'user2@gmail.com', '0388542487', 'Lang Son', '123456', 1, 0, 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png');
 
 --
 -- Chỉ mục cho các bảng đã đổ

@@ -32,8 +32,8 @@ class Register extends Controller
             $kq = $this->UserModel->InsertNewUser($fullname, $email, $password, $phone_number, $address);
             // show home
             if ($kq["result"]) {
-                header('Location: http://localhost/Shop/Login');
-            } else header('Location: http://localhost/Shop/Register/GetPage/0');
+                header('Location: http://localhost/style-shop-2022/Login');
+            } else header('Location: http://localhost/style-shop-2022/Register/GetPage/0');
         }
     }
 }
