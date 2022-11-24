@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Cấu trúc bảng cho bảng `category`
 --
+drop DATABASE shop;
 CREATE DATABASE IF NOT EXISTS `shop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `shop`;
 
@@ -43,9 +44,9 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'Áo'),
 (2, 'Quần'),
 (3, 'Giày-Dép'),
-(10, 'Nón'),
-(11, 'Mắt Kính'),
-(112, 'Phụ kiện khác');
+(4, 'Nón'),
+(5, 'Mắt Kính'),
+(6, 'Phụ kiện khác');
 
 -- --------------------------------------------------------
 
@@ -67,11 +68,11 @@ CREATE TABLE `feedback` (
 -- Đang đổ dữ liệu cho bảng `feedback`
 --
 
-INSERT INTO `feedback` (`id`, `note`, `user_id`, `product_id`, `created_at`, `updated_at`, `status`) VALUES
-(52, 'Rất tốt', 50, 4, '2022-06-17 11:30:08', '2022-06-17 11:30:08', 0),
-(53, 'Sản phẩm tuyệt vời', 50, 1, '2022-06-18 06:02:08', '2022-06-18 06:02:08', 0),
-(54, 'Giá thành cạnh tranh nha', 51, 1, '2022-06-18 06:03:52', '2022-06-18 11:28:45', 1),
-(55, 'Tôi rất thích', 51, 1, '2022-06-19 02:50:21', '2022-06-19 02:50:21', 0);
+-- INSERT INTO `feedback` (`id`, `note`, `user_id`, `product_id`, `created_at`, `updated_at`, `status`) VALUES
+-- (52, 'Rất tốt', 50, 4, '2022-06-17 11:30:08', '2022-06-17 11:30:08', 0),
+-- (53, 'Sản phẩm tuyệt vời', 50, 1, '2022-06-18 06:02:08', '2022-06-18 06:02:08', 0),
+-- (54, 'Giá thành cạnh tranh nha', 51, 1, '2022-06-18 06:03:52', '2022-06-18 11:28:45', 1),
+-- (55, 'Tôi rất thích', 51, 1, '2022-06-19 02:50:21', '2022-06-19 02:50:21', 0);
 
 -- --------------------------------------------------------
 
@@ -96,9 +97,9 @@ CREATE TABLE `orders` (
 -- Đang đổ dữ liệu cho bảng `orders`
 --
 
-INSERT INTO `orders` (`id`, `fullname`, `email`, `phone`, `user_id`, `status`, `deleted`, `address`, `created_at`, `total_money`) VALUES
-(58, 'User1', 'user1@gmail.com', '+84388542487', 50, 3, 0, 'Vĩnh Long', '2022-11-12 15:15:38', 25989999),
-(59, 'User2', 'user2@gmail.com', '+84388542487', 51, 3, 0, 'Vĩnh Long', '2022-11-12 15:18:05', 25990000);
+-- INSERT INTO `orders` (`id`, `fullname`, `email`, `phone`, `user_id`, `status`, `deleted`, `address`, `created_at`, `total_money`) VALUES
+-- (58, 'User1', 'user1@gmail.com', '+84388542487', 50, 3, 0, 'Vĩnh Long', '2022-11-12 15:15:38', 25989999),
+-- (59, 'User2', 'user2@gmail.com', '+84388542487', 51, 3, 0, 'Vĩnh Long', '2022-11-12 15:18:05', 25990000);
 
 -- --------------------------------------------------------
 
@@ -119,9 +120,9 @@ CREATE TABLE `order_details` (
 -- Đang đổ dữ liệu cho bảng `order_details`
 --
 
-INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `price`, `num`, `total_money`) VALUES
-(101, 58, 61, 25990000, 1, 25990000),
-(102, 59, 61, 25990000, 1, 25990000);
+-- INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `price`, `num`, `total_money`) VALUES
+-- (101, 58, 61, 25990000, 1, 25990000),
+-- (102, 59, 61, 25990000, 1, 25990000);
 
 -- --------------------------------------------------------
 
@@ -141,8 +142,8 @@ CREATE TABLE `payments` (
 -- Đang đổ dữ liệu cho bảng `payments`
 --
 
-INSERT INTO `payments` (`id`, `order_id`, `user_id`, `money`, `note`) VALUES
-(11, 2147483647, 51, 25990000, 'Noi dung thanh toan');
+-- INSERT INTO `payments` (`id`, `order_id`, `user_id`, `money`, `note`) VALUES
+-- (11, 2147483647, 51, 25990000, 'Noi dung thanh toan');
 
 -- --------------------------------------------------------
 
@@ -168,48 +169,33 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `category_id`, `title`, `price`, `discount`, `photo`, `description`, `created_at`, `updated_at`, `deleted`) VALUES
-(1, 2, 'iPhone 13 Pro Max 128GB', 34990000, 29690000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/1/_/1_66_6_2_1_11.jpg', 'iPhone 13 Pro Max – siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách.', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
-(2, 2, 'iPhone 13 mini 256GB', 24990000, 21990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/1/3/13_4_7_2_2.jpg', 'iPhone 13 Mini – siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách.', '2022-11-08 07:39:49', '2022-11-08 07:39:49', 0),
-(3, 1, 'Samsung Galaxy S22 Ultra 5G', 20990000, 28990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119_3.jpg', 'Galaxy S22 Ultra 5G với bút S-Pen tích hợp. Samsung Galaxy S22 Ultra 5G (8GB|128GB) Chính hãng mang đến trải nghiệm di động tối ưu và cao cấp. Bằng cách kết hợp các tính năng tốt nhất của dòng Note và S', '2022-11-08 07:41:20', '2022-11-08 07:41:20', 0),
-(4, 1, 'Galaxy Z Fold3 5G 256GB', 41990000, 34490000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/g/a/galaxy-z-fold3-kv_5g__1p_cmyk_1_2_1.jpg', 'Galaxy Z Fold3 5G (Z Fold 3) là chiếc điện thoại màn hình gập cao cấp nhất của Samsung. Z Fold 3 sẽ là chiếc điện thoại Samsung đầu tiên có camera dưới màn hình, đẳng cấp, góp phần mang đến những trải nghiệm mới mẻ, ấn tượng hơn cho người dùng.', '2022-11-08 07:38:56', '2022-11-08 07:38:56', 0),
-(5, 3, 'Xiaomi Redmi 10C', 3890000, 3690000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/x/i/xiaomi-redmi-10c-1-003.jpg', 'Điện thoại Xiaomi Redmi 10C – Hiệu năng “khủng” trong tầm giá phải chăng. Xiaomi vừa cho ra mắt thêm một lựa chọn smartphone tuyệt vời trong phân khúc phổ thông: điện thoại Xiaomi Redmi 10C với màn hình lớn, hiệu năng “khủng” kèm thời lượng pin dài sẽ giúp người dùng công nghệ có được chiếc smartphone thích hợp cho năm 2022.', '2022-11-08 07:45:28', '2022-11-08 07:45:28', 0),
-(6, 3, 'Poco M4 Pro 5G (6GB/128GB)', 5790000, 5290000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/f/v/fvssxa.jpg', 'POCO M4 Pro 5G chính là dòng điện thoại tầm trung được phát hành bởi công ty con của Xiaomi với nhiều cải tiến so với thế hệ tiền nhiệm. Chỉ sau một thời gian ngắn ra mắt, POCO M4 Pro 5G đã nhận được sự yêu thích và tin dùng từ nhiều người dùng.', '2022-11-08 07:44:00', '2022-11-08 07:44:00', 0),
-(7, 2, 'Apple iPhone 11 64GB', 17990000, 11990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/1/_/1_253_1.jpg', 'iPhone 11 vẫn sở hữu thiết kế tràn viền với “tai thỏ” giống iPhone X. Viền bezel phía trên và dưới cũng được làm gọn lại nhằm tối đa màn hình sử dụng. Cùng với đó, 4 góc của máy cũng được bo tròn nhẹ tạo cảm giác chắc chắn khi cầm trên tay. Mặt lưng iPhone 11 làm từ chất liệu kính nên rất sang trọng, tinh tế. Khác với các dòng iPhone trước, sản phẩm này sẽ có 6 màu bản bạc, vàng, xanh lá, trắng, đen đỏ.', '2022-11-08 07:40:41', '2022-11-08 07:40:41', 0),
-(9, 10, 'Nokia G10', 4190000, 3690000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/6/3/637649100605269420_nokia-c30-xanh-1_3.jpg', 'Nokia G10 là sản phẩm mới nhất với các ưu điểm chính là viên pin dung lượng lên tới 5050mAh hỗ trợ AI, màn hình lớn 6,5 inch, 3 camera sau và khả năng năng nhận diện khuôn mặt.', '2022-11-08 07:42:50', '2022-11-08 07:42:50', 0),
-(50, 1, 'Samsung Galaxy A73 (5G) 256GB', 12990000, 10690000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/a/7/a73-xanh.jpg', 'Điện thoại cao cấp nhất dòng Galaxy A series sở hữu nhiều nâng cấp đáng giá so với thế hệ trước, từ ngoại hình cho đến hiệu năng, đặc biệt là hệ thống camera. Sau đây là những đánh giá chi tiết về chiếc Samsung A73 giúp bạn có cái nhìn tổng quan nhất về chiếc smartphone cận cao cấp này.', '2022-06-17 01:55:16', '2022-06-17 01:55:16', 0),
-(51, 1, 'Samsung Galaxy S20 FE 256GB (Fan Edition)', 15490000, 10990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/s/a/samsung-galaxy-20-fe_4_.jpg', 'Samsung S20 FE là chiếc điện thoại sắp được ra mắt từ Samsung, với chữ FE đằng sau tên gọi của máy có nghĩa là Fan Edition. Đây là dòng điện thoại ra mắt như để gửi lời tri ân đến các fan trung thành đã và đang sử dụng các sản phẩm của Samsung. Với số lượng sản phẩm được giới hạn và chỉ mở bán trong thời gian ngắn.', '2022-06-17 01:56:34', '2022-06-17 01:56:34', 0),
-(52, 2, 'iPhone 12 128GB I Chính hãng VN/A', 24990000, 17990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-12_2__1.jpg', 'iPhone 12 hiện nay là cái tên “sốt xình xịch” bởi đây là một trong 4 siêu phẩm vừa được ra mắt của Apple với những đột phá về cả thiết kế lẫn cấu hình. Phiên bản Apple iPhone 12 128GB chính là một trong những chiếc iPhone được săn đón nhất bởi dung lượng bộ nhớ khủng, cho phép bạn thoải mái với vô vàn ứng dụng.', '2022-06-17 01:57:38', '2022-06-17 01:57:38', 0),
-(53, 3, 'Xiaomi Redmi Note 11 Pro Plus 5G', 9990000, 8690000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/1/1/11-pro-plus-blue.jpg', 'Điện thoại Redmi Note 11 Pro+ có thiết kế thanh lịch và vuông vắn hơn, mặt trước và sau được vát phẳng hơn mang đến kiểu dáng hiện đại, hợp xu hướng. Bốn góc của smartphone vẫn được bo cong để hài hòa với tổng thể, mềm mại cũng như cầm nắm thoải mái.', '2022-06-17 01:58:57', '2022-06-17 01:58:57', 0),
-(54, 3, 'Xiaomi 12', 19990000, 14990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/t/_/t_i_xu_ng_1__3_10.png', 'Nối tiếp thành công của Mi 11, hãng điện thoại Xiaomi tiếp tục cho ra mắt mẫu sản phẩm kế nhiệm mang tên Xiaomi 12 với nhiều cải tiến vượt trội so với thế hệ trước. Đây hứa hẹn là một flagship mạnh mẽ về nhiều mặt từ hiệu năng, dung lượng pin đến camera.', '2022-06-17 01:59:49', '2022-06-17 01:59:49', 0),
-(55, 10, 'Nokia 105 4G', 900000, 750000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/1/0/105-2.jpg', 'Điện thoại Nokia 105 4G tập trung vào tối ưu tính tiện lợi cho người dùng. Chiếc máy sở hữu thân hình gọn gàng, mỏng nhẹ, với thiết kế bỏ túi thân thiện giúp bạn dễ dàng cất giữ và lấy máy nghe gọi khi cần. Lớp vỏ máy được chế tác từ chất liệu bền bỉ chuẩn Châu Âu nhằm tăng cường độ cứng cáp và an toàn cho máy.', '2022-06-17 02:03:28', '2022-06-17 02:03:28', 0),
-(56, 10, 'Nokia C30 2GB 32GB', 3000000, 2500000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/n/o/nokia-c30-xanh-600x600_4_4.jpg', 'Thoải mái trải nghiệm cả ngày - Viên pin cực lớn 6000 mAh, sạc tối đa 10W', '2022-06-17 02:05:31', '2022-06-17 02:05:31', 0),
-(57, 10, 'Nokia 215 4G', 1500000, 1250000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/n/o/nokia-215-4g-600jpg-600x600.jpg', 'Với nhiều người dùng thích sự nhỏ gọn của các thiết kế dòng điện thoại phổ thông của Nokia, việc trang bị cho mình một chiếc Nokia 215 4G là một sự lựa chọn phù hợp với đầy đủ các tính năng và còn thêm cả khả năng có thể truy cập internet mang đến cho người dùng trải nghiệm hoàn toàn mới.', '2022-06-17 02:06:33', '2022-06-17 02:06:33', 0),
-(58, 11, 'Huawei P30', 20990000, 15990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-p50.jpg', 'Điện thoại Huawei P30 nổi bật với màu “Gradient” vốn đã được sử dụng trên Huawei P20, được lấy cảm hứng từ xu hướng sử dụng bản màu Gradients trên các giao diện. Với lớp phủ quang học NCVM bên dưới mặt kính, kết hợp phản chiếu khúc xạ ánh sáng để tạo nên dải màu tươi mới, giúp nó có thể đổi màu từ màu tím sang xanh lục, sang xanh lam.', '2022-06-18 02:51:46', '2022-06-18 02:51:46', 0),
-(59, 11, 'Huawei Mate X3', 18500000, 15000000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-mate-x2-4g-1-500x500.jpg', 'Huawei Mate X3 là chiếc smartphone màn hình gập tiếp theo nhà Huawei muốn mang đến cho người dùng. Sở hữu màn hình gập độc đáo cùng những trang bị hiện đại về vi xử lý, camera cũng như công nghệ sạc ấn tượng Mate X3 sẽ giúp người dùng có những giây phút trải nghiệm cực chất và bất tận.', '2022-06-17 02:08:31', '2022-06-17 02:08:31', 0),
-(60, 11, 'Huawei Nova 8i', 12990000, 11990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-nova-8-600x600-600x600.jpg', 'Là một hãng điện thoại nổi tiêng với các sản phẩm chất lượng, Huawei mới đây tiếp tục cho ra mắt mẫu smartphone mới mang tên Huawei Nova 8i. Điện thoại Huawei Nova 8i là mẫu điện thoại phân khúc tầm trung với thiết kế cùng hiệu năng ấn tượng.', '2022-06-17 02:09:09', '2022-06-17 02:09:09', 0),
-(61, 11, 'Huawei P50 Pro+', 25990000, 20990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/h/u/huawei-p50-pro-plus.jpg', 'Điện thoại Huawei P50 Pro Plus được trang bị màn hình cong thác nước đẹp mắt cùng hai viền bezel cạnh bên siêu mỏng. Bên trong màn hình là thiết kế đục lỗ chứa camera selfie bên trong màn hình. Nhờ đó màn hình Huawei P50 Pro Plus có một không gian hiển thị khá lớn, lên đến 91,6%.', '2022-06-17 02:09:48', '2022-06-17 02:09:48', 0),
-(62, 2, 'iPhone 8 Plus 128GB Chính hãng', 16000000, 13500000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-8-plus_4_.jpg', 'Kế thừa sự thành công của iPhone 7/7 Plus, Apple lại tiếp tục làm cộng đồng yêu công nghệ phải chú ý khi cho ra mắt mẫu điện thoại iPhone 12 và kế tiếp của họ - iPhone 8 Plus 128GB. iPhone 8 Plus 128GB sở hữu thiết kế đẳng cấp với mặt lưng làm từ kính hoàn toàn mới lạ, độc đáo và sang trọng hơn người anh em tiền nhiệm. Bên cạnh đó, iPhone 8 Plus cũng có nhiều nâng cấp từ camera, hiệu năng,… để mang đến cho người dùng những trải nghiệm đỉnh cao hơn.', '2022-06-17 16:04:54', '2022-06-17 16:04:54', 0),
-(64, 2, 'iPhone SE 2022 | Chính hãng VN/A', 12990000, 11390000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg', 'Thế hệ iPhone SE trước đó chỉ được trang bị ba phiên bản màu. Sang đến thế hệ SE 2022, thiết bị vẫn giữ lại ba màu sắc trên thế hệ trước lần lượt là đỏ, trắng và đen. Đặc biệt, iPhone SE 2022 sẽ không được trang bị thêm màu sắc mới. Với ba phiên bản màu sắc trên thì Midnight và Starlight sẽ là những sự lựa chọn an toàn, không bị lỗi thời sau thời gian sử dụng. Trong khi đó SE 2022 đỏ sẽ là một sự lựa chọn cá tính, hợp với các người dùng trẻ.', '2022-06-18 02:30:53', '2022-06-18 02:30:53', 0),
-(65, 2, 'iPhone 13 512GB | Chính hãng VN/A', 33990000, 25500000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-13-02_4.jpg', 'Điện thoại iPhone 13 512GB được nhiều khách hàng, người dùng yêu thích nhờ bộ nhớ cao, dung lượng pin lớn cùng tốc độ vượt trội giúp gia tăng khả năng xử lý của điện thoại một cách đáng kể, mang lại trải nghiệm ấn tượng cho người dùng.', '2022-06-18 02:32:08', '2022-06-18 02:32:08', 0),
-(66, 2, 'iPhone 13 256GB - Mỹ', 27990000, 23590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-13-05.jpg', 'Về kích thước, iPhone 13 sẽ có 4 phiên bản khác nhau và kích thước không đổi so với series iPhone 12 hiện tại. Nếu iPhone 12 có sự thay đổi trong thiết kế từ góc cạnh bo tròn (Thiết kế được duy trì từ thời iPhone 6 đến iPhone 11 Pro Max) sang thiết kế vuông vắn (đã từng có mặt trên iPhone 4 đến iPhone 5S, SE).', '2022-06-18 02:55:19', '2022-06-18 02:55:19', 0),
-(67, 1, 'Samsung Galaxy Note 20 Ultra', 32990000, 18990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/b/l/black_final_1.jpg', 'Bên cạnh biên bản Galaxy Note 20 thường, Samsung còn cho ra mắt Note 20 Ultra 5G cho khả năng kết nối dữ liệu cao cùng thiết kế nguyên khối sang trọng, bắt mắt. Đây sẽ là sự lựa chọn hoàn hảo dành cho bạn để sử dụng mà không bị lỗi thời sau thời gian dài ra mắt.', '2022-06-18 02:39:45', '2022-06-18 02:39:45', 0),
-(68, 1, 'Samsung Galaxy A71', 10990000, 7700000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/s/a/samsung-galaxy-a71-thumblo_n-tra_ng-600x600_1_2_1.jpg', 'Samsung Galaxy A71 sẽ là điện thoại giá cả phải chăng của Samsung với mục đích tiếp cận đối tượng rộng hơn. Samsung A71 là sản phẩm thuộc series Samsung Galaxy A với màn hình đục lỗ, cấu hình mạnh mẽ, cụm bốn camera sau chất lượng cao và cùng nhiều công nghệ thời thượng.', '2022-06-18 02:41:47', '2022-06-18 02:41:47', 0),
-(69, 11, 'Huawei Y6p', 15990000, 8990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/p/4/p40_0001_layer_1.jpg', 'Huawei Y6p 2020 là phiên bản nâng cấp hoàn hảo của thế hệ 2019. Mẫu smartphone giá rẻ mới nhất của Huawei sở hữu cấu hình khá nổi bật gồm chip Mediatek Helio P22, 3GB RAM và bộ nhớ trong 64GB đảm bảo mọi trải nghiệm mọi tác vụ mượt mà.', '2022-06-18 02:50:10', '2022-06-18 02:50:10', 0),
-(70, 11, 'Huawei Y6S', 12990000, 7990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/6/3/637072477486312431_huawei-y6s-1.png', 'Dòng Huawei Y-series từ khi ra mắt đã luôn nhận được sự yêu thích của người sử dụng bởi mức giá “mềm” cho đa số đối tượng cùng với cấu hình đạt sự ổn định tốt. Nối tiếp thành công vừa qua thì mẫu smartphone Huawei Y6S 2019 chắc chắn sẽ khiến người dùng hài lòng về chất lượng sản phẩm mang lại.', '2022-06-18 02:43:41', '2022-06-18 02:43:41', 0),
-(71, 3, 'Xiaomi Mi 11 Lite 5G', 10590000, 7990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/x/i/xiaomi-11-lite-5g-ne-600x600.jpg', 'Mi 11 Lite 5G và 4G là bộ đôi vừa được Xiaomi trình làng. So sánh nhanh thì cả hai máy sở hữu cùng kích thước màn hình, thông số cụm camera sau và dung lượng pin. Nhưng bên cạnh đó thì phiên bản 5G vẫn còn một số điểm khác biệt so với bản 4G.', '2022-06-18 02:56:50', '2022-06-18 02:56:50', 0),
-(72, 3, 'Xiaomi 12 Pro (5G)', 27990000, 21590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/x/i/xiaomi-12-pro_arenamobiles.jpg', 'Là một trong những dòng smartphone chủ lực của hãng, Xiaomi 12 Pro sở hữu một thiết kế ấn tượng cùng hiệu năng vượt trội mang lại trải nghiệm dùng mượt mà. Bên cạnh đó, máy còn được trang bị hệ thống camera vô cùng chất lượng cho ra những bức ảnh chuyên nghiệp.', '2022-06-18 02:45:50', '2022-06-18 02:45:50', 0),
-(73, 10, 'Nokia G21', 4290000, 3590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/t/h/thumb_602966_default_big.jpg', 'Dù nằm trong phân khúc phổ thông, Nokia G21 sở hữu loạt thông số ấn tượng như camera 50 MP, màn hình lớn sắc nét, vi xử lý tốt cùng pin \"trâu\" giúp cho đây là sản phẩm smartphone dễ tiếp cận và phù hợp cho tất cả người dùng công nghệ.', '2022-06-18 02:46:56', '2022-06-18 02:46:56', 0),
-(74, 10, 'Nokia G50 (5G)', 6590000, 4590000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/n/o/nokia-g50-4_1.jpeg', 'Hãng điện thoại lừng danh Nokia vẫn chưa ngừng cuộc chơi trong thị phần smartphone. Bằng chứng là việc hãng vừa tung ra thị trường sản phẩm mới mang tên Nokia G50 - hỗ trợ mạng 5G với mức giá phổ thông cho tất cả người yêu công nghệ.', '2022-06-18 02:47:51', '2022-06-18 02:47:51', 0),
-(75, 1, 'Samsung Galaxy S20 Ultra', 29990000, 20990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/6/3/637170935875912528_ss-s20-ultra-den-1.png', 'Samsung Galaxy S20 Ultra là flagship mới của dòng Galaxy S sẽ được Samsung giới thiệu vào đầu năm 2020. Đây là phiên bản cao cấp nhất bên cạnh phiên bản thường và bản Plus. Điện thoại sẽ được trang bị những tính năng tuyệt vời, dung lượng pin lớn, màn hình được trang bị tần số quét 120Hz, camera chính có độ phân giải 108mp sẽ là những tính năng nổi bật nhất. Để tiết kiệm chi phí nhưng vẫn có thể trải nghiệm các tính năng cao cấp, tham khảo ngay điện thoại Samsung S20 FE đang có mức giá cực hấp dẫn.', '2022-06-18 03:00:14', '2022-06-18 03:00:14', 0),
-(77, 1, 'Samsung Galaxy S21 Plus 5G', 25990000, 16990000, 'https://cdn2.cellphones.com.vn/358x/media/catalog/product/s/a/samsung-galaxy-s21-plus-1.jpg', 'Có thể nói chiếc Samsung S21 Plus là một trong những chiếc điện thoại đáng được sở hữu nhất trong phân khúc tầm giá hiện tại. Với sự thay đổi thiết kế đột phá đi đầu trong phong cách thiết kế cùng với cấu hình cực kỳ mạnh mẽ của dòng S Plus của Samsung mang đến cho người dùng.', '2022-06-19 00:52:38', '2022-06-19 00:52:38', 0),
-(78, 112, 'Realme GT Neo 3 Naruto', 12990000, 11990000, 'https://cdn.mobilecity.vn/mobilecity-vn/images/2022/05/w300/realme-gt-neo-3-naruto.jpg', 'Realme đã trình làng phiên bản Realme GT Neo 3 kết hợp với phong cách ninja lấy cảm hứng từ bộ truyện tranh Naruto nổi tiếng đến từ Nhật Bản và sẽ có số lượng giới hạn chỉ 5000 sản phẩm. Chiếc máy này sở hữu ngoại hình nổi bật với tông màu cam chủ đạo tương tự bộ đồ của nhân vật trong bộ truyện cùng tên, đi kèm với đó là các chi tiết tạo điểm nhấn ở phần trên của mặt lưng máy cũng như cụm camera.', '2022-11-09 01:36:46', '2022-11-09 01:36:46', 0),
-(79, 112, 'Xiaomi Mi 6X Hatsune Miku', 11590000, 9290000, 'https://www.duchuymobile.com/images/detailed/11/Xiaomi-Mi-6X-Hatsune-Miku-Duchuymobile.png', 'Sau khi chính thức ra mắt Mi 6X, nhà sản xuất Xiaomi tiếp tục cho ra mắt phiên bản đặc biệt của thiết kế này với tên gọi Xiaomi Mi 6X Hatsune Miku.\r\n\r\nĐây là phiên bản đặc biệt, giới hạn chỉ 5000 con trên toàn thế giới nên rất ấn tượng và xuất sắc làm hài lòng các Fan của cô ca sĩ ảo Hatsune Miku và Fan Xiaomi.', '2022-11-09 01:39:03', '2022-11-09 01:39:03', 0),
-(80, 112, 'OnePlus 6 Avengers Infinity War', 18990000, 16890000, 'https://www.duchuymobile.com/images/variant_image/18/oneplus-6-avenger-thumbnail.jpg', 'OnePlus 6 Avengers Infinity War Edition phiên bản đặc biệt: Thiết kế ấn tượng, RAM 8GB, ROM 256GB.\r\nBên cạnh bản tiêu chuẩn thì OnePlus còn ra mắt thêm phiên bản đặc biệt mang tên OnePlus 6 Avengers Infinity War Edition hay gọi tắt là OnePlus 6 Avengers.\r\nMặt trước của hộp có logo OnePlus quen thuộc và chữ A, chữ viết tắt của Avengers. Phần chất liệu làm vỏ hộp cũng chắc chắn và trong cao cấp hơn.', '2022-11-09 01:41:32', '2022-11-09 01:41:32', 0),
-(81, 112, 'Realme GT Neo 2 Dragon Ball', 12990000, 10990000, 'https://cdn.mobilecity.vn/mobilecity-vn/images/2022/01/w300/realme-gt-neo-2-dragon-ball-edition-4-1.png', 'Ngày 4 tháng 1 năm 2022, tại Thâm Quyến, Trung Quốc - Hội nghị Thương hiệu xu hướng khoa học và công nghệ Realme, với chủ đề \"Budokai số 1 thế giới\", đã chính thức phát hành phiên bản mới của dòng GT Neo 2 đó là Realme GT Neo 2 Dragon Ball Custom Edition. Lần này, Realme đã bắt tay với Công ty truyện tranh IP Dragon Ball của Nhật Bản để tạo ra một sản phẩm lấy cảm hứng từ Goku và Thế giới Dragon Ball dành cho người hâm mộ yêu thích Dragon Ball. Từ trong ra ngoài, sản phẩm được in hình ảnh nhân vật, cài đặt kỹ năng và các yếu tố cổ điển của Dragon Ball. Thiết kế sản phẩm có tone \"máu nóng\", tạo ra những khác biệt cá tính, thời trang dành riêng cho giới trẻ và những người hâm mộ Dragon Ball.', '2022-11-12 07:49:37', '2022-11-12 07:49:37', 0);
-
--- --------------------------------------------------------
-
---
+(1, 1, 'Áo Thun Wash Support Friends', 300000, 270000, 'https://product.hstatic.net/1000026602/product/dsc02413_12f68b68be2e47cbb090f08b97b470d3_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(2, 1, 'Áo Thun Wash Air Balloon', 300000, 270000, 'https://product.hstatic.net/1000026602/product/dsc01629_8ca46e4f5a5c41caaa1044769854acc5_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(3, 1, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(4, 1, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(5, 2, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(6, 2, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(7, 2, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(8, 2, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(9, 3, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(10, 3, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(11, 3, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(12, 3, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(13, 3, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(14, 3, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(15, 4, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(16, 4, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(17, 4, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(18, 4, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(19, 4, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(20, 5, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(21, 5, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(22, 5, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(23, 5, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(24, 6, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(25, 6, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(26, 6, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
+(27, 6, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0);
 -- Cấu trúc bảng cho bảng `role`
 --
 

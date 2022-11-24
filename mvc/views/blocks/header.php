@@ -126,7 +126,7 @@ foreach ($cart as $item) {
                 </div>
             </div>
             <div class="shopping_cart">
-                <a style="font-size: 30px;color:#ffc107" href="http://localhost/Shop/Home/card"><i class="shopping_cart fas fa-shopping-cart"></i></a>
+                <a style="font-size: 30px;color:#ffc107" href="http://localhost/style-shop-2022/Home/Card"><i class="shopping_cart fas fa-shopping-cart"></i></a>
                 <span class="mount_product"><?= $count ?></span>
             </div>
         </div>
