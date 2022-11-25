@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 12, 2022 lúc 09:41 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.11
+-- Máy chủ: localhost
+-- Thời gian đã tạo: Th10 25, 2022 lúc 02:43 AM
+-- Phiên bản máy phục vụ: 10.4.27-MariaDB
+-- Phiên bản PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `sphone`
+-- Cơ sở dữ liệu: `shop`
 --
 
 -- --------------------------------------------------------
@@ -26,14 +26,10 @@ SET time_zone = "+00:00";
 --
 -- Cấu trúc bảng cho bảng `category`
 --
-drop DATABASE shop;
-CREATE DATABASE IF NOT EXISTS `shop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `shop`;
-
 
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -56,23 +52,13 @@ INSERT INTO `category` (`id`, `name`) VALUES
 
 CREATE TABLE `feedback` (
   `id` int(11) NOT NULL,
-  `note` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` varchar(500) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `product_id` int(11) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `status` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `feedback`
---
-
--- INSERT INTO `feedback` (`id`, `note`, `user_id`, `product_id`, `created_at`, `updated_at`, `status`) VALUES
--- (52, 'Rất tốt', 50, 4, '2022-06-17 11:30:08', '2022-06-17 11:30:08', 0),
--- (53, 'Sản phẩm tuyệt vời', 50, 1, '2022-06-18 06:02:08', '2022-06-18 06:02:08', 0),
--- (54, 'Giá thành cạnh tranh nha', 51, 1, '2022-06-18 06:03:52', '2022-06-18 11:28:45', 1),
--- (55, 'Tôi rất thích', 51, 1, '2022-06-19 02:50:21', '2022-06-19 02:50:21', 0);
 
 -- --------------------------------------------------------
 
@@ -82,13 +68,13 @@ CREATE TABLE `feedback` (
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `fullname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fullname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
   `deleted` int(11) NOT NULL DEFAULT 0,
-  `address` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(100) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `total_money` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -97,9 +83,9 @@ CREATE TABLE `orders` (
 -- Đang đổ dữ liệu cho bảng `orders`
 --
 
--- INSERT INTO `orders` (`id`, `fullname`, `email`, `phone`, `user_id`, `status`, `deleted`, `address`, `created_at`, `total_money`) VALUES
--- (58, 'User1', 'user1@gmail.com', '+84388542487', 50, 3, 0, 'Vĩnh Long', '2022-11-12 15:15:38', 25989999),
--- (59, 'User2', 'user2@gmail.com', '+84388542487', 51, 3, 0, 'Vĩnh Long', '2022-11-12 15:18:05', 25990000);
+INSERT INTO `orders` (`id`, `fullname`, `email`, `phone`, `user_id`, `status`, `deleted`, `address`, `created_at`, `total_money`) VALUES
+(60, 'Nguyễn Minh Phú', 'phu.nguyen0808@hcmut.edu.vn', '0912752653', 50, 0, 0, 'Số 42 Khu Phước Trung', '2022-11-25 02:39:01', 760000),
+(61, 'Nguyễn Minh Phú', 'ngoa@gmail.com', '0912752653', 50, 0, 0, 'Số 42 Khu Phước Trung', '2022-11-25 02:40:44', 760000);
 
 -- --------------------------------------------------------
 
@@ -120,9 +106,9 @@ CREATE TABLE `order_details` (
 -- Đang đổ dữ liệu cho bảng `order_details`
 --
 
--- INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `price`, `num`, `total_money`) VALUES
--- (101, 58, 61, 25990000, 1, 25990000),
--- (102, 59, 61, 25990000, 1, 25990000);
+INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `price`, `num`, `total_money`) VALUES
+(103, 61, 3, 380000, 1, 380000),
+(104, 61, 4, 380000, 1, 380000);
 
 -- --------------------------------------------------------
 
@@ -136,14 +122,7 @@ CREATE TABLE `payments` (
   `user_id` int(11) NOT NULL,
   `money` float NOT NULL COMMENT 'số tiền thanh toán',
   `note` varchar(255) DEFAULT NULL COMMENT 'ghi chú thanh toán'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Đang đổ dữ liệu cho bảng `payments`
---
-
--- INSERT INTO `payments` (`id`, `order_id`, `user_id`, `money`, `note`) VALUES
--- (11, 2147483647, 51, 25990000, 'Noi dung thanh toan');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -154,11 +133,11 @@ CREATE TABLE `payments` (
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `category_id` int(11) DEFAULT NULL,
-  `title` varchar(350) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(350) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `discount` int(11) DEFAULT NULL,
-  `photo` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(500) DEFAULT NULL,
+  `description` longtext DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted` int(11) DEFAULT 0
@@ -196,12 +175,16 @@ INSERT INTO `product` (`id`, `category_id`, `title`, `price`, `discount`, `photo
 (25, 6, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
 (26, 6, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0),
 (27, 6, 'Quần Short Straight Red Details', 380000, 320000, 'https://product.hstatic.net/1000026602/product/dsc01217_8e642de669e545759dd9f9ebf330620f_master.jpg', 'Ao sieu dinh', '2022-11-08 07:38:15', '2022-11-08 07:38:15', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `role`
 --
 
 CREATE TABLE `role` (
   `id` int(11) NOT NULL,
-  `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+  `name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -212,6 +195,7 @@ INSERT INTO `role` (`id`, `name`) VALUES
 (1, 'User'),
 (2, 'Admin');
 
+-- --------------------------------------------------------
 
 --
 -- Cấu trúc bảng cho bảng `user`
@@ -219,14 +203,14 @@ INSERT INTO `role` (`id`, `name`) VALUES
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `fullname` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fullname` varchar(50) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `password` varchar(32) DEFAULT NULL,
   `role_id` int(11) DEFAULT NULL,
   `deleted` int(11) NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
+  `avatar` varchar(255) DEFAULT 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -291,7 +275,6 @@ ALTER TABLE `product`
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id`);
 
-
 --
 -- Chỉ mục cho bảng `user`
 --
@@ -319,13 +302,13 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT cho bảng `payments`

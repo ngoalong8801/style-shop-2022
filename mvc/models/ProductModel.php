@@ -63,4 +63,10 @@ class ProductModel extends DB{
         return $userItem;
     }
 
+    public function getProductOrder($ids){
+        $sql = "select * from product where id in ($ids)";
+        $cart = $this->executeResult($sql);
+        return $cart;
+    }
+
 }

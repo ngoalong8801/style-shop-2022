@@ -2,7 +2,7 @@
 require_once "mvc/utility/utility.php";
 if (isset($data["render"])) {
     if ($data["render"] == "ManageAccount")
-        $user = getUserToken(1);
+        $user = getUserSession();
     else $user = getUserSession();
 } else $user = getUserSession();
 echo $user['fullname'];

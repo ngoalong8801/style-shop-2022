@@ -28,7 +28,7 @@
                        <a href="http://localhost/style-shop-2022/Home/productDetail/' . $data["orderDetails"][$i]["id"] . '">
                         <div class="mask">
                           <img class="img-fluid w-100"
-                            src="' . $data["orderDetails"][$i]["thumbnail"] . '">
+                            src="' . $data["orderDetails"][$i]["photo"] . '">
                           <div class="mask rgba-black-slight"></div>
                         </div>
                       </a>
@@ -104,9 +104,8 @@
           </ul>
           <?php
           if (isset($user)) {
-            echo '<a style="color:white;text-decoration:none" href="http://localhost/style-shop-2022/Home/checkout/' . $total . '"><button type="button" class="btn btn-primary btn-block">Thanh toán khi nhận hàng</button></a>';
+            echo '<a style="color:white;text-decoration:none" href="http://localhost/style-shop-2022/Home/checkout/' . $total . '"><button type="button" class="btn btn-primary btn-block">Thanh toán</button></a>';
             echo '<br/>';
-            echo '<a style="color:white;text-decoration:none" href="http://localhost/style-shop-2022/Home/paymentOnline/' . $total . '"><button type="button" class="btn btn-primary btn-block">Thanh toán online</button></a>';
           } else echo '<a style="color:red" href="http://localhost/style-shop-2022/Login">Vui lòng đăng nhập để đặt hàng</a>';
           ?>
 

@@ -12,5 +12,8 @@ if ($data["render"] == "home") {
 }else if ($data["render"] == "card") {
     require_once "mvc/views/components/card.php";
 }
+else if ($data["render"] == "checkout") {
+    require_once "mvc/views/components/checkout.php";
+}
 
 require_once "mvc/views/blocks/footer.php";

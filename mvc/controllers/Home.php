@@ -90,15 +90,14 @@ class Home extends Controller
             $json = $_COOKIE['cart'];
             $cart = json_decode($json, true);
         }
-        $idList = [];
+        $ids = [];
         foreach ($cart as $item) {
-            $idList[] = $item['id'];
+            $ids[] = $item['id'];
             $num[] = $item['num'];
         }
-        if (count($idList) > 0) {
-            $idList = implode(',', $idList);
-            //[2, 5, 6] => 2,5,6
-            $orderDetails = $this->productModel->getProductOrder($idList);
+        if (count($ids) > 0) {
+            $ids = implode(',', $ids);
+            $orderDetails = $this->productModel->getProductOrder($ids);
         } else {
             $orderDetails = [];
         }
@@ -147,4 +146,36 @@ class Home extends Controller
             setcookie('cart', json_encode($cart), time() + 30 * 24 * 60 * 60, '/');
         }
     }
+
+    public function deleteCart()
+    {
+        if (!empty($_POST)) {
+            $id = getPost('productId');
+
+            $cart = [];
+            if (isset($_COOKIE['cart'])) {
+                $json = $_COOKIE['cart'];
+                $cart = json_decode($json, true);
+            }
+
+            for ($i = 0; $i < count($cart); $i++) {
+                if ($cart[$i]['id'] == $id) {
+                    array_splice($cart, $i, 1);
+                    break;
+                }
+            }
+            setcookie('cart', json_encode($cart), time() + 30 * 24 * 60 * 60, '/');
+        }
+    }
+
+    public function checkout($total)
+    {
+
+        $this->view("home", [
+            "render" => "checkout",
+            "allCategory" => $this->allCategory,
+            "totalMoney" => $total
+        ]);
+    }
+
 }
