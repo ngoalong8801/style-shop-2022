@@ -1,5 +1,5 @@
 <?php
-require_once "mvc/utility/utility.php";
+require_once "mvc/utils/utils.php";
 if (isset($data["render"])) {
     if ($data["render"] == "ManageAccount")
         $user = getUserSession();

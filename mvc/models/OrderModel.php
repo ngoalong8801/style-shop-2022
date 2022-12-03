@@ -1,5 +1,5 @@
 <?php
-require_once "mvc/utility/utility.php";
+require_once "mvc/utils/utils.php";
 class OrderModel extends DB
 {
     public function insertOrders($user_id, $fullname, $address, $phone, $email, $totalMoney)

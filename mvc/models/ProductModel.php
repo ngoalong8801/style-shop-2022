@@ -1,5 +1,5 @@
 <?php
-require_once "mvc/utility/utility.php";
+require_once "mvc/utils/utils.php";
 
 class ProductModel extends DB{
 

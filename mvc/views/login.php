@@ -1,5 +1,5 @@
 <?php
-require_once "mvc/utility/utility.php";
+require_once "mvc/utils/utils.php";
 $user = getUserSession();
 if ($user != null) {
     if ($user["role_id"] == 1) {

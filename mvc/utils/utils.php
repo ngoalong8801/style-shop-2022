@@ -69,11 +69,3 @@ function getUserSession($noSession = 0){
 
 
 
-// function fixUrl($thumbnail, $rootPath = "http://localhost/Shop/public/images/") {
-// 	if(stripos($thumbnail, 'http://') !== false || stripos($thumbnail, 'https://') !== false) {
-// 	} else {
-// 		$thumbnail = $rootPath.$thumbnail;
-// 	}
-
-// 	return $thumbnail;
-// }

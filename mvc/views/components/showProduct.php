@@ -17,7 +17,7 @@
                                 alt="Card image cap">
                         </a>';
                     echo        '<div class="card-body">';
-                    echo            '<a id="taga" href="http://localhost/SPhone/Home/productDetail/' . $data["shirtProduct"][$i]["id"] . '"><h5 class="card-title">' . $data["shirtProduct"][$i]["title"] . '</h5></a>
+                    echo            '<a id="taga" href="http://localhost/style-shop-2022/Home/productDetail/' . $data["shirtProduct"][$i]["id"] . '"><h5 class="card-title">' . $data["shirtProduct"][$i]["title"] . '</h5></a>
                             <hr />';
                     echo            '<span class="card-text">' . number_format($data["shirtProduct"][$i]["discount"]) . 'đ</span>';
                     echo            '<span style="margin-left:12px; text-decoration: line-through;" class="card-text">';
