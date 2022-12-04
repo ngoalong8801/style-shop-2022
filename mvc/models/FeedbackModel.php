@@ -3,16 +3,6 @@ require_once "mvc/utils/utils.php";
 class FeedbackModel extends DB
 {
 
-    public function getAllFeedback()
-    {
-        $sql = "SELECT feedback.id,user.fullname,user.phone_number,user.email,feedback.note,feedback.updated_at,product.title,feedback.status
-                FROM feedback,user,product
-                WHERE feedback.user_id = user.id AND feedback.product_id=product.id
-                order by status asc, updated_at desc";
-        $data = $this->executeResult($sql);
-        return $data;
-    }
-
     public function getFeedbackProduct($id)
     {
         $sql = "SELECT user.fullname, feedback.updated_at,feedback.note, user.avatar

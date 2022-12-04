@@ -5,7 +5,6 @@ if (isset($data["render"])) {
         $user = getUserSession();
     else $user = getUserSession();
 } else $user = getUserSession();
-echo $user['fullname'];
 if ($user != null) {
     $fullname = $user["fullname"];
 }
@@ -144,7 +143,7 @@ foreach ($cart as $item) {
                 var search_name = $("#search_name").val();
                 if ($("#search_name").val() != '') {
                     $.ajax({
-                        url: "http://localhost/Shop/Home/search",
+                        url: "http://localhost/style-shop-2022/Home/search",
                         method: "POST",
                         data: {
                             action: action,

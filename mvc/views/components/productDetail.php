@@ -79,7 +79,7 @@
         }
         ?>
         <h5 class="mt-4">Thêm bài đánh giá</h5>
-        <form form method="post" enctype="multipart/form-data" action="http://localhost/style-shop-2022/FeedbackAdmin/addFeedback">
+        <form form method="post" enctype="multipart/form-data" action="http://localhost/style-shop-2022/Feedback/addFeedback">
           <!-- Your review -->
           <input type="text" name="product_id" value="<?= $data["productItem"]["id"] ?>" hidden="true">
           <input type="text" name="user_id" value="<?= $user["id"] ?>" hidden="true">
