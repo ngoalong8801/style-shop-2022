@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th10 25, 2022 lúc 02:43 AM
+-- Thời gian đã tạo: Th12 04, 2022 lúc 10:45 AM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 7.4.33
 
@@ -60,6 +60,13 @@ CREATE TABLE `feedback` (
   `status` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `note`, `user_id`, `product_id`, `created_at`, `updated_at`, `status`) VALUES
+(56, '12', 50, 2, '2022-12-04 10:33:05', '2022-12-04 10:33:05', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -85,7 +92,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `fullname`, `email`, `phone`, `user_id`, `status`, `deleted`, `address`, `created_at`, `total_money`) VALUES
 (60, 'Nguyễn Minh Phú', 'phu.nguyen0808@hcmut.edu.vn', '0912752653', 50, 0, 0, 'Số 42 Khu Phước Trung', '2022-11-25 02:39:01', 760000),
-(61, 'Nguyễn Minh Phú', 'ngoa@gmail.com', '0912752653', 50, 0, 0, 'Số 42 Khu Phước Trung', '2022-11-25 02:40:44', 760000);
+(61, 'Nguyễn Minh Phú', 'ngoa@gmail.com', '0912752653', 50, 0, 0, 'Số 42 Khu Phước Trung', '2022-11-25 02:40:44', 760000),
+(62, 'Nguyễn Minh Phú', 'user1@gmail.com', '0912752653', 50, 0, 0, 'Số 42 Khu Phước Trung', '2022-12-04 10:38:16', 640000);
 
 -- --------------------------------------------------------
 
@@ -108,7 +116,8 @@ CREATE TABLE `order_details` (
 
 INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `price`, `num`, `total_money`) VALUES
 (103, 61, 3, 380000, 1, 380000),
-(104, 61, 4, 380000, 1, 380000);
+(104, 61, 4, 380000, 1, 380000),
+(105, 62, 10, 320000, 2, 640000);
 
 -- --------------------------------------------------------
 
@@ -296,19 +305,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT cho bảng `payments`
