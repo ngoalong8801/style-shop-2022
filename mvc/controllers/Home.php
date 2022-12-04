@@ -215,4 +215,32 @@ class Home extends Controller
         }
     }
 
+    public function introduction()
+    {
+
+        $this->view("home", [
+            "render" => "introduction",
+            "allCategory" => $this->allCategory
+        ]);
+    }
+
+    public function news()
+    {
+
+        $this->view("home", [
+            "render" => "news",
+            "allCategory" => $this->allCategory
+        ]);
+    }
+
+    public function contact()
+    {
+        $this->view("home", [
+            "render" => "news",
+            "allCategory" => $this->allCategory
+        ]);
+    }
+
+
+
 }

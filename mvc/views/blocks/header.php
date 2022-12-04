@@ -87,10 +87,10 @@ foreach ($cart as $item) {
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "tintuc") echo "active"; ?>" href="http://localhost/style-shop-2022/Home/tintuc">Tin tức</a>
+                    <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "tintuc") echo "active"; ?>" href="http://localhost/style-shop-2022/Home/news">Tin tức</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "gioithieu") echo "active"; ?>" href="http://localhost/style-shop-2022/Home/gioithieu">Giới thiệu</a>
+                    <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "gioithieu") echo "active"; ?>" href="http://localhost/style-shop-2022/Home/introduction">Giới thiệu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-warning fw-bold <?php if ($data["render"] == "contact") echo "active"; ?>" href="http://localhost/style-shop-2022/Home/contact">Liên hệ</a>

@@ -14,6 +14,12 @@ if ($data["render"] == "home") {
 }
 else if ($data["render"] == "checkout") {
     require_once "mvc/views/components/checkout.php";
-}
+}else if ($data["render"] == "introduction") {
+    require_once "mvc/views/components/introduction.php";
+}else if ($data["render"] == "news") {
+    require_once "mvc/views/components/news.php";
+} else if ($data["render"] == "contact") {
+    require_once "mvc/views/components/contact.php";
+} 
 
 require_once "mvc/views/blocks/footer.php";
