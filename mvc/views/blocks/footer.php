@@ -1,66 +1,151 @@
-<footer style="background-color: #f7f7f7; margin-top:15px" class="page-footer font-small elegant-color">
+  <!-- Footer -->
+  <footer class="bg3 p-t-75 p-b-32">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-6 col-lg-3 p-b-50">
+                  <h4 class="stext-301 cl0 p-b-30">
+                      Categories
+                  </h4>
 
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left pt-4 pt-md-5">
-        <!-- Grid row -->
-        <div class="row mt-1 mt-md-0 mb-4 mb-md-0">
-            <!-- Grid column -->
-            <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
-                <!-- Links -->
-                <h5>Giới thiệu về chúng tôi</h5>
-             
-            </div>
-            <!-- Grid column -->
-            <hr class="clearfix w-100 d-md-none">
-            <!-- Grid column -->
-            <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
-                <!-- Links -->
-                <h5>Sản phẩm nổi bật</h5>
-           
-            </div>
-            <!-- Grid column -->
-            <hr class="clearfix w-100 d-md-none">
-            <!-- Grid column -->
-            <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
-                <!-- Links -->
-                <h5>Hỗ trợ</h5>
-                <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
-                <ul class="list-unstyled foot-desc">
-                    <li class="mb-2">
-                        <a href="http://localhost/Shop/Home/gioithieu">Giới thiệu</a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="http://localhost/Shop/Home/tintuc">Tin tức</a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="http://localhost/Shop/Home/contact">Liên hệ</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Grid column -->
-            <hr class="clearfix w-100 d-md-none">
-            <!-- Grid column -->
-            <div class="col-md-3 mx-auto mt-3 mt-md-0 mb-0 mb-md-4">
-                <!-- Links -->
-                <h5>Liên hệ</h5>
-                <hr class="color-primary mb-4 mt-0 d-inline-block mx-auto w-60">
-                <ul class="fa-ul foot-desc ml-4">
-                    <li class="mb-2"><span class="fa-li"><i class="far fa-map"></i></span>Đại học Bách Khoa TPHCM
-                    </li>
+                  <ul>
+                      <li class="p-b-10">
+                          <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                              Women
+                          </a>
+                      </li>
 
-                    </li>
-                    <li><span class="fa-li"><i class="far fa-clock"></i></span>Làm việc 24/7</li>
-                </ul>
-            </div>
-            <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-    </div>
-    <!-- Footer Links -->
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-<!-- index30:23-->
+                      <li class="p-b-10">
+                          <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                              Men
+                          </a>
+                      </li>
 
-</html>
+                      <li class="p-b-10">
+                          <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                              Shoes
+                          </a>
+                      </li>
+
+                      <li class="p-b-10">
+                          <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                              Watches
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+
+              <div class="col-sm-6 col-lg-3 p-b-50">
+                  <h4 class="stext-301 cl0 p-b-30">
+                      Help
+                  </h4>
+
+                  <ul>
+                      <li class="p-b-10">
+                          <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                              Track Order
+                          </a>
+                      </li>
+
+                      <li class="p-b-10">
+                          <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                              Returns
+                          </a>
+                      </li>
+
+                      <li class="p-b-10">
+                          <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                              Shipping
+                          </a>
+                      </li>
+
+                      <li class="p-b-10">
+                          <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                              FAQs
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+
+              <div class="col-sm-6 col-lg-3 p-b-50">
+                  <h4 class="stext-301 cl0 p-b-30">
+                      GET IN TOUCH
+                  </h4>
+
+                  <p class="stext-107 cl7 size-201">
+                      Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on
+                      (+1) 96 716 6879
+                  </p>
+
+                  <div class="p-t-27">
+                      <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                          <i class="fa fa-facebook"></i>
+                      </a>
+
+                      <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                          <i class="fa fa-instagram"></i>
+                      </a>
+
+                      <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                          <i class="fa fa-pinterest-p"></i>
+                      </a>
+                  </div>
+              </div>
+
+              <div class="col-sm-6 col-lg-3 p-b-50">
+                  <h4 class="stext-301 cl0 p-b-30">
+                      Newsletter
+                  </h4>
+
+                  <form>
+                      <div class="wrap-input1 w-full p-b-4">
+                          <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email"
+                              placeholder="email@example.com">
+                          <div class="focus-input1 trans-04"></div>
+                      </div>
+
+                      <div class="p-t-18">
+                          <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                              Subscribe
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+          <div class="p-t-40">
+              <div class="flex-c-m flex-w p-b-18">
+                  <a href="#" class="m-all-1">
+                      <img src="http://localhost/style-shop-2022/public/images/icons/icon-pay-01.png" alt="ICON-PAY">
+                  </a>
+
+                  <a href="#" class="m-all-1">
+                      <img src="http://localhost/style-shop-2022/public/images/icons/icon-pay-02.png" alt="ICON-PAY">
+                  </a>
+
+                  <a href="#" class="m-all-1">
+                      <img src="http://localhost/style-shop-2022/public/images/icons/icon-pay-03.png" alt="ICON-PAY">
+                  </a>
+
+                  <a href="#" class="m-all-1">
+                      <img src="http://localhost/style-shop-2022/public/images/icons/icon-pay-04.png" alt="ICON-PAY">
+                  </a>
+
+                  <a href="#" class="m-all-1">
+                      <img src="http://localhost/style-shop-2022/public/images/icons/icon-pay-05.png" alt="ICON-PAY">
+                  </a>
+              </div>
+
+              <p class="stext-107 cl6 txt-center">
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                  document.write(new Date().getFullYear());
+                  </script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                      href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a
+                      href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+              </p>
+          </div>
+      </div>
+  </footer>

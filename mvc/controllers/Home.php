@@ -82,7 +82,7 @@ class Home extends Controller
     }
 
 
-    public function Card()
+    public function cart()
     {
         $cart = [];
         $num = [];
@@ -106,7 +106,7 @@ class Home extends Controller
             $countOrder = count($orderDetails);
         else $countOrder = 0;
         $this->view("home", [
-            "render" => "card",
+            "render" => "cart",
             "orderDetails" => $orderDetails,
             "countOrder" => $countOrder,
             "allCategory" => $this->allCategory,
@@ -215,20 +215,20 @@ class Home extends Controller
         }
     }
 
-    public function introduction()
+    public function about()
     {
 
         $this->view("home", [
-            "render" => "introduction",
+            "render" => "about",
             "allCategory" => $this->allCategory
         ]);
     }
 
-    public function news()
+    public function blog()
     {
 
         $this->view("home", [
-            "render" => "news",
+            "render" => "blog",
             "allCategory" => $this->allCategory
         ]);
     }
@@ -236,7 +236,7 @@ class Home extends Controller
     public function contact()
     {
         $this->view("home", [
-            "render" => "news",
+            "render" => "contact",
             "allCategory" => $this->allCategory
         ]);
     }
