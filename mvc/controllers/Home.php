@@ -5,6 +5,7 @@ class Home extends Controller
     public $categoryModel;
 
     // public $categoryModel, $productMode, $allCategory;
+    public $cart;
 
     public function __construct()
     {
@@ -20,7 +21,42 @@ class Home extends Controller
             "render" => "home",
             "allCategory" => $this->allCategory,
             "allProduct" => $allProduct,
+            "cart" => $this->getCart(),
         ]);
+    }
+    
+    function getCart(){
+        $cart = [];
+        $num = [];
+        if (isset($_COOKIE['cart'])) {
+            $json = $_COOKIE['cart'];
+            $cart = json_decode($json, true);
+        }
+        $ids = [];
+        $map = [];
+        foreach ($cart as $item) {
+            $ids[] = $item['id'];
+            $map[$item['id']] = $item['num']; 
+        }
+        if (count($ids) > 0) {
+            $ids = implode(',', $ids);
+            $orderDetails = $this->productModel->getProductOrder($ids);
+        } else {
+            $orderDetails = [];
+        }
+
+        foreach($orderDetails as $order){
+            $num[] = $map[$order['id']];
+        }
+
+        if ($orderDetails != NULL)
+            $countOrder = count($orderDetails);
+        else $countOrder = 0;
+
+        return [ "orderDetails" => $orderDetails,
+            "countOrder" => $countOrder,
+            "allCategory" => $this->allCategory,
+            "num" => $num];
     }
 
     public function productDetail($id)
@@ -38,7 +74,8 @@ class Home extends Controller
             "allProductCategory" => $allProductCategory,
             "category_id" => $category_id,
             "allCategory" => $this->allCategory,
-            "feedbackProduct" => $feedbackProduct
+            "feedbackProduct" => $feedbackProduct,
+            "cart" => $this->getCart(),
         ]);
     }
 
@@ -65,6 +102,8 @@ class Home extends Controller
             "render" => "productList",
             "allProduct" => $allProduct,
             "allCategory" => $this->allCategory,
+            "cart" => $this->getCart(),
+            
             // "category_id" => $category_id,
             // "numPages" => $numPages,
             // "currentIndex" => $currentIndex,
@@ -83,15 +122,20 @@ class Home extends Controller
             $cart = json_decode($json, true);
         }
         $ids = [];
+        $map = [];
         foreach ($cart as $item) {
             $ids[] = $item['id'];
-            $num[] = $item['num'];
+            $map[$item['id']] = $item['num']; 
         }
         if (count($ids) > 0) {
             $ids = implode(',', $ids);
             $orderDetails = $this->productModel->getProductOrder($ids);
         } else {
             $orderDetails = [];
+        }
+
+        foreach($orderDetails as $order){
+            $num[] = $map[$order['id']];
         }
 
         if ($orderDetails != NULL)
@@ -102,7 +146,8 @@ class Home extends Controller
             "orderDetails" => $orderDetails,
             "countOrder" => $countOrder,
             "allCategory" => $this->allCategory,
-            "num" => $num
+            "num" => $num,
+            "cart" => $this->getCart(),
         ]);
     }
 
@@ -153,6 +198,33 @@ class Home extends Controller
             for ($i = 0; $i < count($cart); $i++) {
                 if ($cart[$i]['id'] == $id) {
                     array_splice($cart, $i, 1);
+                    break;
+                }
+            }
+            setcookie('cart', json_encode($cart), time() + 30 * 24 * 60 * 60, '/');
+        }
+    }
+
+    public function updateCart()
+    {
+        if (!empty($_POST)) {
+            $id = getPost('productId');
+            $action = getPost('action');
+
+            $cart = [];
+            if (isset($_COOKIE['cart'])) {
+                $json = $_COOKIE['cart'];
+                $cart = json_decode($json, true);
+            }
+
+            for ($i = 0; $i < count($cart); $i++) {
+                if ($cart[$i]['id'] == $id) {
+                    if($action == "MINUS"){
+                        $cart[$i]['num']--;
+                    }
+                    else{
+                        $cart[$i]['num']++;
+                    }
                     break;
                 }
             }
@@ -212,7 +284,8 @@ class Home extends Controller
 
         $this->view("home", [
             "render" => "about",
-            "allCategory" => $this->allCategory
+            "allCategory" => $this->allCategory,
+            "cart" => $this->getCart(),
         ]);
     }
 
@@ -221,7 +294,8 @@ class Home extends Controller
 
         $this->view("home", [
             "render" => "blog",
-            "allCategory" => $this->allCategory
+            "allCategory" => $this->allCategory,
+            "cart" => $this->getCart(),
         ]);
     }
 
@@ -229,7 +303,8 @@ class Home extends Controller
     {
         $this->view("home", [
             "render" => "contact",
-            "allCategory" => $this->allCategory
+            "allCategory" => $this->allCategory,
+            "cart" => $this->getCart(),
         ]);
     }
 

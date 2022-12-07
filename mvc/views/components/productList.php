@@ -247,7 +247,7 @@
                       <div class="block2-pic hov-img0">
                           <img src="' . $product['photo'] . '" alt="IMG-PRODUCT">
 
-                          <a href="http://localhost/style-shop-2022/home/productDetail/' . $product['id'] . '"
+                          <a href="http://localhost/style-shop-2022/Home/productDetail/' . $product['id'] . '"
                               class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
                               Quick View abc
                           </a>
@@ -255,7 +255,7 @@
 
                       <div class="block2-txt flex-w flex-t p-t-14">
                           <div class="block2-txt-child1 flex-col-l ">
-                              <a href="http://localhost/style-shop-2022/home/productDetail/' . $product['id'] . '" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                              <a href="http://localhost/style-shop-2022/Home/productDetail/' . $product['id'] . '" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                               ' . $product['title'] . '
                               </a>
 

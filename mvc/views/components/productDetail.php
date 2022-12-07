@@ -69,7 +69,7 @@
                         <input type="text" id="quantity" name="quantity" class="quantity form-control input-number"
                             value="1" min="1" max="100">
                         <span class="input-group-btn ml-2">
-                            <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                            <button type="button" onclick="" class="quantity-right-plus btn" data-type="plus" data-field="">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </span>
@@ -79,8 +79,7 @@
                         <p style="color: #000;">80 piece available</p>
                     </div>
                 </div>
-                <p><a href="cart.html" class="btn btn-black py-3 px-5 mr-2">Add to Cart</a><a href="cart.html"
-                        class="btn btn-primary py-3 px-5">Buy now</a></p>
+                <p><a href='javascript:;' onclick="addToCard(<?= $data['productItem']['id'] ?>)" class="btn btn-black py-3 px-5 mr-2">Add to Cart</a>
             </div>
         </div>
 
@@ -248,3 +247,50 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+  function checkContentFeedback() {
+    var note = document.getElementById("form76").value;
+    var userId = document.getElementById("user_id").innerHTML;
+    if (userId == '123')
+      alert("Vui lòng đăng ngập để đánh giá!!!");
+    else if (note == "")
+      alert("Vui lòng nhập nội dung đánh giá!!!");
+  }
+
+  $(document).ready(function() {
+    $(".btnOrder").click(function() {
+      $("#alertSuccess").html('<p style="background-color: #55e073;padding: 10px;"><i class="fas fa-check-circle"></i>Thêm vào giỏ hàng thành công</p>');
+    });
+    $(".btn").click(function() {
+      $("#alertSuccess").html('<p style="background-color: #55e073;padding: 10px;"><i class="fas fa-check-circle"></i>Thêm vào giỏ hàng thành công</p>');
+    });
+
+    $(".quantity-left-minus").click(function(){
+        let quantity = Number($("#quantity").val()) - 1
+        $("#quantity").val(quantity);
+        
+    });
+
+    $(".quantity-right-plus").click(function(){
+        $("#quantity").val(Number($("#quantity").val()) + 1);
+    });
+  });
+
+  function addToCard(productId) {
+    let num = document.getElementById("quantity").value;
+    let action = "add";
+
+    $.ajax({
+      url: "../../home/addToCart",
+      method: "POST",
+      data: {
+        action: action,
+        productId: productId,
+        num: num
+      },
+      success: function(data) {
+        location.reload();
+      }
+    });
+  }
+</script>
