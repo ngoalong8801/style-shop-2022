@@ -15,21 +15,11 @@ class Home extends Controller
 
     function GetPage()
     {
-        $shirtProduct = $this->productModel->selectProductCategory(1, 1);
-        $pantProduct = $this->productModel->selectProductCategory(2, 1);
-        $sandalProduct = $this->productModel->selectProductCategory(3, 1);
-        $hatProduct = $this->productModel->selectProductCategory(4, 1);
-        $glassProduct = $this->productModel->selectProductCategory(5, 1);
-        $otherProduct = $this->productModel->selectProductCategory(6, 1);
+        $allProduct = $this->productModel->getAllProduct(PRICE_ASC);
         $this->view("home", [
             "render" => "home",
             "allCategory" => $this->allCategory,
-            "shirtProduct" => $shirtProduct,
-            "pantProduct" => $pantProduct,
-            "sandalProduct" => $sandalProduct,
-            "hatProduct" => $hatProduct,
-            "glassProduct" => $glassProduct,
-            "otherProduct" => $otherProduct
+            "allProduct" => $allProduct,
         ]);
     }
 
@@ -52,32 +42,34 @@ class Home extends Controller
         ]);
     }
 
-    public function productList($category_id = 0, $page = 1, $fillter = PRICE_DESC)
+    public function productList($category_id = 0, $fillter = PRICE_DESC)
     {
-        if ($category_id == 0) {
-            for ($i = 0; $i < count($this->allCategory); $i++) {
-                $category[$i] = $this->allCategory[$i]["id"];
-            }
-            $allProduct = $this->productModel->getAllProduct($fillter);
-            $currentIndex = ($page - 1) * 12;
-            $countAllProduct = count($allProduct);
-            $numPages = ceil($countAllProduct / 12);
-        } else {
-            $allProduct = $this->productModel->selectProductCategory($category_id, $fillter);
-            $currentIndex = ($page - 1) * 12;
-            $countAllProduct = count($allProduct);
-            $numPages = ceil($countAllProduct / 12);
-        }
+        // if ($category_id == 0) {
+        //     for ($i = 0; $i < count($this->allCategory); $i++) {
+        //         $category[$i] = $this->allCategory[$i]["id"];
+        //     }
+        //     $allProduct = $this->productModel->getAllProduct($fillter);
+        //     $currentIndex = ($page - 1) * 12;
+        //     $countAllProduct = count($allProduct);
+        //     $numPages = ceil($countAllProduct / 12);
+        // } else {
+        //     $allProduct = $this->productModel->selectProductCategory($category_id, $fillter);
+        //     $currentIndex = ($page - 1) * 12;
+        //     $countAllProduct = count($allProduct);
+        //     $numPages = ceil($countAllProduct / 12);
+        // }
+        
+        $allProduct = $this->productModel->getAllProduct(PRICE_ASC);
 
         $this->view("home", [
             "render" => "productList",
-            "allProductCategory" => $allProduct,
+            "allProduct" => $allProduct,
             "allCategory" => $this->allCategory,
-            "category_id" => $category_id,
-            "numPages" => $numPages,
-            "currentIndex" => $currentIndex,
-            "pages" => $page,
-            "fillter" => $fillter
+            // "category_id" => $category_id,
+            // "numPages" => $numPages,
+            // "currentIndex" => $currentIndex,
+            // "pages" => $page,
+            // "fillter" => $fillter
         ]);
     }
 

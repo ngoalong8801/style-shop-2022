@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th12 04, 2022 lúc 10:45 AM
+-- Thời gian đã tạo: Th12 07, 2022 lúc 03:43 AM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 7.4.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `shop`
+-- Cơ sở dữ liệu: `shop_ltw`
 --
 
 -- --------------------------------------------------------
@@ -37,12 +37,12 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Áo'),
-(2, 'Quần'),
-(3, 'Giày-Dép'),
-(4, 'Nón'),
-(5, 'Mắt Kính'),
-(6, 'Phụ kiện khác');
+(1, 'Shirt'),
+(2, 'Pant'),
+(3, 'Shoe'),
+(4, 'Hat'),
+(5, 'Glass'),
+(6, 'Acccessories');
 
 -- --------------------------------------------------------
 

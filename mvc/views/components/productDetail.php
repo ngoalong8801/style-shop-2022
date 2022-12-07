@@ -15,13 +15,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mb-5 ftco-animate">
-                <a href="http://localhost/style-shop-2022/public/images/product-1.png"
+                <a href="<?php echo $data["productItem"]['photo']; ?>"
                     class="image-popup prod-img-bg"><img
-                        src="http://localhost/style-shop-2022/public/images/product-1.png" class="img-fluid"
+                        src="<?php echo $data["productItem"]['photo']; ?>" class="img-fluid"
                         alt="Colorlib Template"></a>
             </div>
             <div class="col-lg-6 product-details pl-md-5 ftco-animate">
-                <h3>Nike Free RN 2019 iD</h3>
+                <h3><?php echo $data["productItem"]['title']; ?></h3>
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
                         <a href="#" class="mr-2">5.0</a>
@@ -38,16 +38,13 @@
                         <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
                     </p>
                 </div>
-                <p class="price"><span>$120.00</span></p>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-                    paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would
-                    have been rewritten a thousand times and everything that was left from its origin would be the word
-                    "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing
-                    the copy said could convince her and so it didn’t take long until a few insidious Copy Writers
-                    ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they
-                    abused her for their.
-                </p>
+                <?php
+                //  echo $data["productItem"]['price'];
+                ?>
+               
+                <p class="price"><span><?php echo $data["productItem"]['price']; ?> VND</span></p>
+                <p><?php echo $data["productItem"]['description']; ?></p>
+           
                 <div class="row mt-4">
                     <div class="col-md-6">
                         <div class="form-group d-flex">
@@ -96,10 +93,6 @@
                     aria-orientation="vertical">
                     <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill"
                         href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Description</a>
-
-                    <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2"
-                        role="tab" aria-controls="v-pills-2" aria-selected="false">Manufacturer</a>
-
                     <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab"
                         aria-controls="v-pills-3" aria-selected="false">Reviews</a>
 
@@ -111,27 +104,12 @@
 
                     <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
                         <div class="p-4">
-                            <h3 class="mb-4">Nike Free RN 2019 iD</h3>
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from
-                                it would have been rewritten a thousand times and everything that was left from its
-                                origin would be the word "and" and the Little Blind Text should turn around and return
-                                to its own, safe country. But nothing the copy said could convince her and so it didn’t
-                                take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and
-                                Parole and dragged her into their agency, where they abused her for their.</p>
+                            <h3 class="mb-4"><?php echo $data["productItem"]['title']; ?></h3>
+                            <p><?php echo $data["productItem"]['description']; ?></p>
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
-                        <div class="p-4">
-                            <h3 class="mb-4">Manufactured By Nike</h3>
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from
-                                it would have been rewritten a thousand times and everything that was left from its
-                                origin would be the word "and" and the Little Blind Text should turn around and return
-                                to its own, safe country. But nothing the copy said could convince her and so it didn’t
-                                take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and
-                                Parole and dragged her into their agency, where they abused her for their.</p>
-                        </div>
-                    </div>
+    
                     <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                         <div class="row p-4">
                             <div class="col-md-7">
