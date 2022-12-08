@@ -81,20 +81,7 @@ class Home extends Controller
 
     public function productList($category_id = 0, $fillter = PRICE_DESC)
     {
-        // if ($category_id == 0) {
-        //     for ($i = 0; $i < count($this->allCategory); $i++) {
-        //         $category[$i] = $this->allCategory[$i]["id"];
-        //     }
-        //     $allProduct = $this->productModel->getAllProduct($fillter);
-        //     $currentIndex = ($page - 1) * 12;
-        //     $countAllProduct = count($allProduct);
-        //     $numPages = ceil($countAllProduct / 12);
-        // } else {
-        //     $allProduct = $this->productModel->selectProductCategory($category_id, $fillter);
-        //     $currentIndex = ($page - 1) * 12;
-        //     $countAllProduct = count($allProduct);
-        //     $numPages = ceil($countAllProduct / 12);
-        // }
+    
         
         $allProduct = $this->productModel->getAllProduct(PRICE_ASC);
 
@@ -103,12 +90,6 @@ class Home extends Controller
             "allProduct" => $allProduct,
             "allCategory" => $this->allCategory,
             "cart" => $this->getCart(),
-            
-            // "category_id" => $category_id,
-            // "numPages" => $numPages,
-            // "currentIndex" => $currentIndex,
-            // "pages" => $page,
-            // "fillter" => $fillter
         ]);
     }
 
@@ -291,21 +272,46 @@ class Home extends Controller
 
     public function blog()
     {
+         $allProduct = $this->productModel->getAllProduct(PRICE_ASC);
+
 
         $this->view("home", [
             "render" => "blog",
             "allCategory" => $this->allCategory,
             "cart" => $this->getCart(),
+             "allProduct" => $allProduct,
+
         ]);
     }
 
     public function contact()
-    {
+    {  
         $this->view("home", [
             "render" => "contact",
             "allCategory" => $this->allCategory,
             "cart" => $this->getCart(),
+           
         ]);
+    }
+
+
+    public function search_button()
+    {
+        if (isset($_POST)) {
+            $page = 1;
+            $search_name = $_POST["search_name"];
+            $allProductCategory = $this->productModel->searchProduct($search_name);
+    
+            $category_id = $fillter = 0;
+            $this->view("home", [
+                "render" => "productList",
+                "allProduct" => $allProductCategory,
+                "allCategory" => $this->allCategory,
+                "category_id" => $category_id,
+                "fillter" => $fillter,
+                "cart" => $this->getCart(),
+            ]);
+        }
     }
 
 

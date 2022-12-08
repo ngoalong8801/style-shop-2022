@@ -1,3 +1,4 @@
+<?php $countFeedback = count($data["feedbackProduct"]); ?>
 <div class="hero-wrap hero-bread"
     style="background-image: url('http://localhost/style-shop-2022/public/images/bg_6.jpg');">
     <div class="container">
@@ -112,7 +113,22 @@
                     <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                         <div class="row p-4">
                             <div class="col-md-7">
-                                <h3 class="mb-4">23 Reviews</h3>
+                                <h3 class="mb-4"><?= $countFeedback ?> Reviews</h3>
+                                <?php
+                                for ($i = 0; $i < $countFeedback; $i++) {
+                                    echo ' <div class="review">
+                                    <div class="user-img" style="" src="' . $data["feedbackProduct"][$i]["avatar"] . '"></div>
+                                    <div class="desc">
+                                        <h4>
+                                            <span class="text-left">' . $data["feedbackProduct"][$i]["fullname"] . '</span>
+                                            <span class="text-right">' . $data["feedbackProduct"][$i]["updated_at"] . '</span>
+                                        </h4>
+                                
+                                        <p>' . $data["feedbackProduct"][$i]["note"] . '</p>
+                                    </div>
+                                </div>';
+                                }
+                                ?>
                                 <div class="review">
                                     <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
                                     <div class="desc">
@@ -135,112 +151,23 @@
                                             back on the skyline of her hometown Bookmarksgrov</p>
                                     </div>
                                 </div>
-                                <div class="review">
-                                    <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                                    <div class="desc">
-                                        <h4>
-                                            <span class="text-left">Jacob Webb</span>
-                                            <span class="text-right">14 March 2018</span>
-                                        </h4>
-                                        <p class="star">
-                                            <span>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                            </span>
-                                            <span class="text-right"><a href="#" class="reply"><i
-                                                        class="icon-reply"></i></a></span>
-                                        </p>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view
-                                            back on the skyline of her hometown Bookmarksgrov</p>
-                                    </div>
-                                </div>
-                                <div class="review">
-                                    <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-                                    <div class="desc">
-                                        <h4>
-                                            <span class="text-left">Jacob Webb</span>
-                                            <span class="text-right">14 March 2018</span>
-                                        </h4>
-                                        <p class="star">
-                                            <span>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                                <i class="ion-ios-star-outline"></i>
-                                            </span>
-                                            <span class="text-right"><a href="#" class="reply"><i
-                                                        class="icon-reply"></i></a></span>
-                                        </p>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view
-                                            back on the skyline of her hometown Bookmarksgrov</p>
-                                    </div>
-                                </div>
+                               
                             </div>
-                            <div class="col-md-4">
-                                <div class="rating-wrap">
-                                    <h3 class="mb-4">Give a Review</h3>
-                                    <p class="star">
-                                        <span>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            (98%)
-                                        </span>
-                                        <span>20 Reviews</span>
-                                    </p>
-                                    <p class="star">
-                                        <span>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            (85%)
-                                        </span>
-                                        <span>10 Reviews</span>
-                                    </p>
-                                    <p class="star">
-                                        <span>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            (98%)
-                                        </span>
-                                        <span>5 Reviews</span>
-                                    </p>
-                                    <p class="star">
-                                        <span>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            (98%)
-                                        </span>
-                                        <span>0 Reviews</span>
-                                    </p>
-                                    <p class="star">
-                                        <span>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            <i class="ion-ios-star-outline"></i>
-                                            (98%)
-                                        </span>
-                                        <span>0 Reviews</span>
-                                    </p>
-                                </div>
-                            </div>
+                            
                         </div>
+                        <h5 class="mt-4">Thêm bài đánh giá</h5>
+        <form form method="post" enctype="multipart/form-data" action="http://localhost/style-shop-2022/Feedback/addFeedback">
+          <!-- Your review -->
+          <input type="text" name="product_id" value="<?= $data["productItem"]["id"] ?>" hidden="true">
+          <input type="text" name="user_id" value="<?= $user["id"] ?>" hidden="true">
+          <div class="md-form md-outline">
+            <label for="form76">Nội dung</label>
+            <textarea name="note" id="form76" class="md-textarea form-control pr-6" rows="4"></textarea>
+          </div>
+          <div class="text-right pb-2">
+            <button class="btn btn-primary" name="btnReview" onclick="checkContentFeedback()">Thêm bài đánh giá</button>
+          </div>
+        </form>
                     </div>
                 </div>
             </div>

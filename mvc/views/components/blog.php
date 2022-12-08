@@ -190,14 +190,7 @@
 
                 <div class="col-md-4 col-lg-3 p-b-80">
                     <div class="side-menu">
-                        <div class="bor17 of-hidden pos-relative">
-                            <input class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="search"
-                                placeholder="Search">
-
-                            <button class="flex-c-m size-122 ab-t-r fs-18 cl4 hov-cl1 trans-04">
-                                <i class="zmdi zmdi-search"></i>
-                            </button>
-                        </div>
+                      
 
                         <div class="p-t-55">
                             <h4 class="mtext-112 cl2 p-b-33">
@@ -205,35 +198,17 @@
                             </h4>
 
                             <ul>
-                                <li class="bor18">
+                                <?php
+                                foreach($data['allCategory'] as $category){
+                                    echo '<li class="bor18">
                                     <a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-                                        Fashion
+                                        ' . $category['name'] . '
                                     </a>
-                                </li>
+                                </li>';
+                                }
+                                ?>
+                                
 
-                                <li class="bor18">
-                                    <a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-                                        Beauty
-                                    </a>
-                                </li>
-
-                                <li class="bor18">
-                                    <a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-                                        Street Style
-                                    </a>
-                                </li>
-
-                                <li class="bor18">
-                                    <a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-                                        Life Style
-                                    </a>
-                                </li>
-
-                                <li class="bor18">
-                                    <a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-                                        DIY & Crafts
-                                    </a>
-                                </li>
                             </ul>
                         </div>
 
@@ -243,9 +218,13 @@
                             </h4>
 
                             <ul>
-                                <li class="flex-w flex-t p-b-30">
+                                <?php
+                                for($i = 0 ; $i < 3 ; $i++){
+                                    $product = $data['allProduct'][$i];
+
+                                    echo '<li class="flex-w flex-t p-b-30">
                                     <a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-                                        <img src="http://localhost/style-shop-2022/public/images/product-min-01.jpg"
+                                        <img src="' . $product['photo'] .'"
                                             alt="PRODUCT">
                                     </a>
 
@@ -258,7 +237,10 @@
                                             $19.00
                                         </span>
                                     </div>
-                                </li>
+                                </li>';
+                                }
+                                ?>
+                                
 
                                 <li class="flex-w flex-t p-b-30">
                                     <a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">

@@ -1,3 +1,25 @@
+<?php
+require_once "mvc/utils/utils.php";
+if (isset($data["render"])) {
+    if ($data["render"] == "ManageAccount")
+        $user = getUserSession();
+    else $user = getUserSession();
+} else $user = getUserSession();
+if ($user != null) {
+    $fullname = $user["fullname"];
+}
+$cart = [];
+if (isset($_COOKIE['cart'])) {
+    $json = $_COOKIE['cart'];
+    $cart = json_decode($json, true);
+}
+$count = 0;
+foreach ($cart as $item) {
+    $count += $item['num'];
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,14 +136,41 @@
                         </ul>
                     </div>
 
+                    
+
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
+                    <div style="margin-right: 20px;" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php
+                    if (isset($fullname))
+                        echo $fullname;
+                    else echo '<i style="font-size: 27px;color:rgb(236, 79, 58)" class="far fa-user"></i>';
+                    ?>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <?php
+                    if (!isset($fullname)) {
+                        echo '<a class="dropdown-item" href="http://localhost/style-shop-2022/Login">Đăng nhập</a>';
+                        echo '<a class="dropdown-item" href="http://localhost/style-shop-2022/Register">Đăng ký</a>';
+                    } else {
+                        if ($user["role_id"] == 2) echo '<a class="dropdown-item" href="http://localhost/style-shop-2022/OrderAdmin">Quản lý trang web</a>';
+                        echo '<a class="dropdown-item" href="http://localhost/style-shop-2022/Home/ManageAccount">Quản lý tài khoản</a>';
+                        echo '<a class="dropdown-item" href="http://localhost/style-shop-2022/Home/quanlydonhang/' . $user["id"] . '">Quản lý đơn hàng</a>';
+                        echo '<a class="dropdown-item" href="http://localhost/style-shop-2022/Login/UserLogout">Đăng xuất</a>';
+                    }
+
+                    ?>
+
+                </div>
+            </div>
+
                         <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
 
                         <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-                            data-notify="2">
+                            data-notify="<?= $count ?>">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
 
@@ -227,12 +276,14 @@
                     <img src="http://localhost/style-shop-2022/public/images/icons/icon-close2.png" alt="CLOSE">
                 </button>
 
-                <form class="wrap-search-header flex-w p-l-15">
+                <form class="wrap-search-header flex-w p-l-15"  method="POST" action="http://localhost/style-shop-2022/Home/search_button">
                     <button class="flex-c-m trans-04">
                         <i class="zmdi zmdi-search"></i>
                     </button>
-                    <input class="plh3" type="text" name="search" placeholder="Search...">
+                    <input class="plh3" type="text" id="search_name" name="search_name" placeholder="Search...">
                 </form>
+                <ul style="border-radius: 7px;width: 20%;position: fixed;z-index: 9999;background-color: #d2d3d4;right: 435px;top: 49px;" class="list-group" id="output_search">
+                </ul>
             </div>
         </div>
     </header>
@@ -291,7 +342,7 @@
                             View Cart
                         </a>
 
-                        <a href="shoping-cart.html"
+                        <a href="http://localhost/style-shop-2022/Home/checkout/' . $total . '"
                             class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                             Check Out
                         </a>
@@ -403,6 +454,32 @@
             ps.update();
         })
     });
+    </script>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+            var action = "search";
+            $("#search_name").keyup(function() {
+                var search_name = $("#search_name").val();
+                if ($("#search_name").val() != '') {
+                    $.ajax({
+                        url: "http://localhost/style-shop-2022/Home/search",
+                        method: "POST",
+                        data: {
+                            action: action,
+                            search_name: search_name
+                        },
+                        success: function(data) {
+                            $("#output_search").html(data);
+                        }
+                    });
+                } else $("#output_search").html("");
+            });
+            $(window).click(function() {
+                //Hide the menus if visible
+                $("#output_search").html("");
+            });
+        });
     </script>
     <!--===============================================================================================-->
     <script src="http://localhost/style-shop-2022/public/js/main.js"></script>

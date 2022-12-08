@@ -120,7 +120,7 @@
                         </div>
                     </div>
 
-                    <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                    <button id="checkout" type="button" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
                         Proceed to Checkout
                     </button>
                 </div>
@@ -131,6 +131,12 @@
 
 <script>
     $(document).ready(function() {
+        $("#checkout").click(function(){
+            let total = Number($("#total-bill").text().replaceAll(',',''));
+
+            window.location.href = 'http://localhost/style-shop-2022/Home/checkout/' + total;
+        }); 
+
         $(".btn-num-product-down").click(function() {
             let id = $(this).parent().attr('id')
             let numAttr = $(this).parent().children(".num-product")

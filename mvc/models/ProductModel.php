@@ -71,10 +71,11 @@ class ProductModel extends DB{
 
     public function searchProduct($name){
 
-        $sql ="SELECT * FROM `product` 
-                WHERE title LIKE '%$name%' 
-                order by id 
-                DESC LIMIT 5";
+        $sql ="select product.*, category.name as category_name 
+                from product left join category on product.category_id = category.id 
+                WHERE product.title LIKE '%$name%' 
+                order by product.id 
+                DESC LIMIT 5 ";
         $searchProducts = $this->executeResult($sql);
         return $searchProducts;
     }

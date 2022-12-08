@@ -21,6 +21,17 @@ class FeedbackModel extends DB
         $this->execute($sql);
     }
 
+    public function addContact($note, $userid)
+    {
+        $updated_at = date("Y-m-d H:i:s");
+        $created_at = date("Y-m-d H:i:s");
+        $user_id = (int)$userid;
+        $sql = "INSERT INTO feedback (note, user_id, product_id,  created_at, updated_at) 
+                VALUES ('$note', $user_id, 25,'$created_at', '$updated_at')";
+       $this->execute($sql);
+       var_dump($sql);
+    }
+
 
     public function updateStatus($id)
     {
