@@ -3,6 +3,16 @@ require_once "mvc/utils/utils.php";
 class FeedbackModel extends DB
 {
 
+    public function getAllFeedback()
+    {
+        $sql = "SELECT feedback.id,user.fullname,user.phone,user.email,feedback.note,feedback.updated_at,product.title,feedback.status
+                FROM feedback,user,product
+                WHERE feedback.user_id = user.id AND feedback.product_id=product.id
+                order by status asc, updated_at desc";
+        $data = $this->executeResult($sql);
+        return $data;
+    }
+
     public function getFeedbackProduct($id)
     {
         $sql = "SELECT user.fullname, feedback.updated_at,feedback.note, user.avatar
@@ -25,13 +35,10 @@ class FeedbackModel extends DB
     {
         $updated_at = date("Y-m-d H:i:s");
         $created_at = date("Y-m-d H:i:s");
-        $user_id = (int)$userid;
         $sql = "INSERT INTO feedback (note, user_id, product_id,  created_at, updated_at) 
-                VALUES ('$note', $user_id, 25,'$created_at', '$updated_at')";
-       $this->execute($sql);
-       var_dump($sql);
+                VALUES ('$note', '$userid', 48,'$created_at', '$updated_at')";
+        $this->execute($sql);
     }
-
 
     public function updateStatus($id)
     {
