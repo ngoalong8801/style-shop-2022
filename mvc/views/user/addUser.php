@@ -32,8 +32,8 @@ require_once('mvc/views/blocks/header_admin.php');
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="phone_number">Phone:</label>
-						<input required="true" type="tel" class="form-control" id="phone_number" name="phone_number">
+						<label for="phone">Phone:</label>
+						<input required="true" type="tel" class="form-control" id="phone" name="phone">
 					</div>
 					<div class="form-group">
 						<label for="address">Address:</label>

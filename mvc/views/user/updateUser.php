@@ -39,8 +39,8 @@ require_once('mvc/views/blocks/header_admin.php');
 						<input required="true" type="email" class="form-control" id="email" name="email" value="<?= $data["userItem"]["email"] ?>">
 					</div>
 					<div class="form-group">
-						<label for="phone_number">SĐT:</label>
-						<input required="true" type="tel" class="form-control" id="phone_number" name="phone_number" value="<?= $data["userItem"]["phone_number"] ?>">
+						<label for="phone">SĐT:</label>
+						<input required="true" type="tel" class="form-control" id="phone" name="phone" value="<?= $data["userItem"]["phone"] ?>">
 					</div>
 					<div class="form-group">
 						<label for="address">Địa Chỉ:</label>

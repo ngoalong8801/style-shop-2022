@@ -8,7 +8,7 @@ require_once('mvc/views/blocks/header_admin.php');
 <div class="container-fluid px-4">
 	<h3 class="fs-4 mb-3">Category Management</h3>
 	<p class="d-none" id="deleteSuccess"><?= $data["deleteSuccess"] ?></p>
-	<a href="http://localhost/style-shop-2022/CategoryAdmin/Add" class="btn btn-outline-primary">Add New Brand</a>
+	<a href="http://localhost/style-shop-2022/CategoryAdmin/Add" class="btn btn-outline-primary">Add New Category</a>
 	<div class="row mt-3">
 		<div class="col">
 			<table id="cateList" class="table bg-white rounded shadow-sm  table-hover">

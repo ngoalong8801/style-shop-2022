@@ -41,8 +41,18 @@ class ProductModel extends DB{
     }
 
     public function selectProductDelete($id) {
+        $result = true;
+        $sql = "select count(*) as total from order_details where product_id = $id";
+        $data = $this->executeResult($sql, true);
+        $total = $data['total'];
+
+        if($total > 0) {
+            $result = false;
+            return $result;
+        }
         $sql = "delete from product where id = $id";
         $this->execute($sql);
+        return $result;
     }
 
     public function updateProduct($id, $category_id, $title, $price, $discount, $photo, $description) {

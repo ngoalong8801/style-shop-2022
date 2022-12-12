@@ -27,7 +27,7 @@ require_once('mvc/views/blocks/header_admin.php');
 				for ($i = 0; $i < $countDetail; $i++) {
 					echo '<tr>
 					<th>' . $i + 1 . '</th>
-					<td><img src="' . fixUrl($data["detailOrder"][$i]['thumbnail']) . '" style="height: 120px"/></td>
+					<td><img src="' . fixUrl($data["detailOrder"][$i]['photo']) . '" style="height: 120px"/></td>
 					<td>' . $data["detailOrder"][$i]['title'] . '</td>
 					<td>' . number_format($data["detailOrder"][$i]['price']) . ' đ</td>
 					<td>' . $data["detailOrder"][$i]['num'] . '</td>

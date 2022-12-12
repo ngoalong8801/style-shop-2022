@@ -7,6 +7,7 @@ require_once('mvc/views/blocks/header_admin.php');
 <!-- ===========Main Content============ -->
 <div class="container-fluid px-4">
 	<h3 class="fs-4 mb-3">Product Management</h3>
+	<p class="d-none" id="sqlerror"><?= $data["sqlerror"] ?></p>
 	<a href="http://localhost/style-shop-2022/ProductAdmin/Add" class="btn btn-outline-primary">Add New Product</a>
 	<div class="row mt-3">
 
@@ -64,13 +65,17 @@ require_once('mvc/views/blocks/header_admin.php');
 		var clicked = jQuery(this);
 		var clicked_url = clicked.attr("href");
 
-		var msg = confirm("Are you sure you want to delete this phone?");
+		var msg = confirm("Bạn có chắc chắn rằng muốn xoá sản phẩm này?");
 		if (msg == true) {
 			window.location.href = clicked_url;
 		}
 	});
 </script>
-
+<script type="text/javascript">
+	if (sqlerror.innerHTML == 1) {
+		alert("Xóa thất bại!!! Vui lòng kiểm tra lại các đơn hàng!!!")
+	}
+</script>
 
 <?php
 require_once('mvc/views/blocks/footer_admin.php');

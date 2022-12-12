@@ -40,7 +40,7 @@ class UserAdmin extends Controller
             $id = getPost('id');
             $fullname = getPost('fullname');
             $email = getPost('email');
-            $phone_number = getPost('phone_number');
+            $phone = getPost('phone');
             $address = getPost('address');
             $password = getPost('password');
             if (isset($_POST['avatar'])) {
@@ -52,7 +52,7 @@ class UserAdmin extends Controller
             if (isset($_POST["role_id"])) {
                 $role_id = getPost('role_id');
             } else $role_id = 1;
-            $result = $this->userModel->updateuser($id, $fullname, $email, $role_id, $phone_number, $address, $password, $avatar);
+            $result = $this->userModel->updateuser($id, $fullname, $email, $role_id, $phone, $address, $password, $avatar);
             if ($location == 1) {
                 header('Location: http://localhost/style-shop-2022/Home/ManageAccount');
             } else header('Location: http://localhost/style-shop-2022/UserAdmin');
@@ -75,12 +75,11 @@ class UserAdmin extends Controller
         if (isset($_POST)) {
             $fullname = getPost('fullname');
             $email = getPost('email');
-            $phone_number = getPost('phone_number');
+            $phone = getPost('phone');
             $address = getPost('address');
             $password = getPost('password');
-            $password = getSecurityMD5($password);
             $role_id = getPost('role_id');
-            $result = $this->userModel->addUser($fullname, $email, $role_id, $phone_number, $address, $password);
+            $result = $this->userModel->addUser($fullname, $email, $role_id, $phone, $address, $password);
         }
         header('Location: http://localhost/style-shop-2022/UserAdmin');
     }

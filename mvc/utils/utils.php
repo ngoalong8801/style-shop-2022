@@ -87,4 +87,11 @@ function getUserToken($noSession=0) {
 	return null;
 }
 
+function fixUrl($photo, $rootPath = "http://localhost/SPhone/public/images/") {
+	if(stripos($photo, 'http://') !== false || stripos($photo, 'https://') !== false) {
+	} else {
+		$photo = $rootPath.$photo;
+	}
 
+	return $photo;
+}
