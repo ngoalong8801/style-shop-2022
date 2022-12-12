@@ -67,5 +67,8 @@ function getUserSession($noSession = 0){
 	}
 }
 
+function changeSession($key, $newvalue) {
+	$_SESSION["$key"] = $newvalue;
+}
 
 

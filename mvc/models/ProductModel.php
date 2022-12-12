@@ -80,4 +80,13 @@ class ProductModel extends DB{
         return $searchProducts;
     }
 
+    public function updateProduct($id, $category_id, $title, $price, $discount, $photo, $description) {
+        $sql = "update product set title = '$title', price = $price, discount = $discount, description = '$description', category_id = '$category_id', photo = '$photo' where id = $id";
+		$this->execute($sql);
+    }
+
+    public function selectProductDelete($id) {
+        $sql = "delete from product where id = $id";
+        $this->execute($sql);
+    }
 }
