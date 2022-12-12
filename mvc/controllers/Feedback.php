@@ -17,12 +17,6 @@ class Feedback extends Controller
         ]);
     }
 
-    public function updateStatusFeedback($id)
-    {
-        $this->feedbackModel->updateStatus($id);
-        header('Location: http://localhost/style-shop-2022/Feedback');
-    }
-
     public function addFeedback(){
         if(isset($_POST["btnReview"])){
             if (isset($_POST["note"]))
