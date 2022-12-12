@@ -30,20 +30,4 @@ class CategoryModel extends DB{
         
         return $name;
     }
-
-    public function selectCategoryDelete($id) {
-        $result = true;
-        $sql = "select count(*) as total from product where category_id = $id and deleted = 0";
-        $data = $this->executeResult($sql, true);
-        $total = $data['total'];
-
-        if($total > 0) {
-            $result = false;
-            return $result;
-        }
-        $sql = "delete from category where id = $id";
-        $this->execute($sql);
-        return $result;
-    }
-
 }

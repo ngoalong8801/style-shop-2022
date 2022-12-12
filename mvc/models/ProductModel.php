@@ -34,22 +34,6 @@ class ProductModel extends DB{
         return $data;
     }
 
-    public function addProduct($category_id, $title, $price, $discount, $photo, $description) {
-        //add
-        $sql = "insert into product(category_id, title, price, discount, photo, description, deleted ) values ('$category_id','$title', '$price','$discount','$photo', '$description',0)";
-        $this->execute($sql);
-    }
-
-    public function selectProductDelete($id) {
-        $sql = "delete from product where id = $id";
-        $this->execute($sql);
-    }
-
-    public function updateProduct($id, $category_id, $title, $price, $discount, $photo, $description) {
-        $sql = "update product set title = '$title', price = $price, discount = $discount, description = '$description', category_id = '$category_id', photo = '$photo' where id = $id";
-		$this->execute($sql);
-    }
-
     public function selectProductCategory($id, $fillter){
         switch($fillter){
             case PRICE_ASC:
