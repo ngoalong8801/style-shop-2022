@@ -46,9 +46,11 @@ if ($user != null) {
   <div class="d-flex" id="wrapper">
     <!-- ===========SIDE BAR============ -->
     <div class="bg-white" id="sidebar-wrapper">
-      <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-        <img src="https://raw.githubusercontent.com/PhucNguyen1905/style-shop-2022/main/public/images/style-shop-2022.png" alt=""> <a href="http://localhost/style-shop-2022/Home" style="text-decoration: none;">style-shop-2022</a>
-      </div>
+    <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+      <a href="http://localhost/style-shop-2022/home" class="logo">
+        <img src="http://localhost/style-shop-2022/public/images/icons/logo-01.png" alt="IMG-LOGO" style="width: 133px; height: 17px;">
+      </a>
+    </div>
       <div class="list-group list-group-flush my-3">
         <a href="http://localhost/style-shop-2022/OrderAdmin" class="<?php echo $activeNav == 'order' ? 'active ' : ' '; ?>list-group-item list-group-item-action bg-transparent second-text">
           <span class="material-icons-sharp me-2">shopping_cart</span>Order
@@ -84,20 +86,5 @@ if ($user != null) {
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user me-2"></i>Admin
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
       </nav>
       <!-- ===========NavBar============ -->
