@@ -18,6 +18,8 @@ if ($data["render"] == "home") {
     require_once "mvc/views/components/blog.php";
 } else if ($data["render"] == "contact") {
     require_once "mvc/views/components/contact.php";
+} else if ($data["render"] == "ManageAccount") {
+    require_once "mvc/views/components/updateInfoUser.php";
 } else if ($data["render"] == "quanlydonhang") {
     require_once "mvc/views/components/quanlydonhang.php";
 } else if ($data["render"] == "orderDetail") {

@@ -314,6 +314,27 @@ class Home extends Controller
         }
     }
 
+    public function ManageAccount()
+    {
+        $this->view("home", [
+            "render" => "ManageAccount", 
+            "allCategory" => $this->allCategory
+        ]);
+    }
+
+    public function confirmOrder($orderId, $user_id)
+    {
+        $orderSuccessModel = $this->model("OrderModel");
+        $orderSuccessModel->updateStatusOrder($orderId);
+        $orderItem = $orderSuccessModel->getorders($user_id);
+
+        $this->view("home", [
+            "render" => "quanlydonhang",
+            "allCategory" => $this->allCategory,
+            "orderItem" => $orderItem
+        ]);
+    }
+
     public function quanlydonhang($user_id)
     {
         $orderSuccessModel = $this->model("OrderModel");
@@ -336,19 +357,6 @@ class Home extends Controller
             "detailOrder" => $detailorder,
             "orderItem" => $orderItem,
             "allCategory" => $this->allCategory
-        ]);
-    }
-
-    public function confirmOrder($orderId, $user_id)
-    {
-        $orderSuccessModel = $this->model("OrderModel");
-        $orderSuccessModel->updateStatusOrder($orderId);
-        $orderItem = $orderSuccessModel->getorders($user_id);
-
-        $this->view("home", [
-            "render" => "quanlydonhang",
-            "allCategory" => $this->allCategory,
-            "orderItem" => $orderItem
         ]);
     }
 
