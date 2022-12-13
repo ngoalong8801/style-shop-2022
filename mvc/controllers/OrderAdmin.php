@@ -61,5 +61,40 @@ class OrderAdmin extends Controller{
         }
     }
 
-    
+    public function detailOrder($id)
+    {
+        $detailorder = $this->orderModel->getDetailOrder($id);
+        $orderItem = $this->orderModel->getOrderItem($id);
+
+        $this->view("order/detailOrder", [
+            "detailOrder" => $detailorder,
+            "orderItem" => $orderItem
+        ]);
+    }
+
+    public function updateStatusOrder($id, $status)
+    {
+        $this->orderModel->updateStatus($id, $status);
+        if ($status == 1) {
+
+            $orderItem = $this->orderModel->getOrderItem($id);
+            $email = $orderItem['email'];
+            $name = $orderItem['fullname'];
+            $address = $orderItem['address'];
+            $phone = $orderItem['phone'];
+            $customer = "<b>Tên: </b>" . $name . " <br> <b>Địa chỉ: </b>" . $address . "<br> <b>Số điện thoại: </b>" . $phone . " <br>";
+
+            $detailorder = $this->orderModel->getDetailOrder($id);
+            $listProduct = "";
+            $countDetail = count($detailorder);
+            for ($i = 0; $i < $countDetail; $i++) {
+                $listProduct = $listProduct . '
+                <b>' . $i + 1 . '. ' . '
+        ' . $detailorder[$i]['title'] . '</b>; Giá: ' . number_format($detailorder[$i]['price']) . ' đ, SL: ' . $detailorder[$i]['num'] . '. Tổng: ' . number_format($detailorder[$i]['total_money']) . ' đ<br>
+            ';
+            }
+        }
+        header('Location: http://localhost/style-shop-2022/OrderAdmin');
+    }
+
 }

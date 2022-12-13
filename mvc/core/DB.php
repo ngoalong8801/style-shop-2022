@@ -6,7 +6,7 @@ class DB
     function execute($sql)
     {
         //open connection
-        $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE,8111);
+        $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
         mysqli_set_charset($conn, 'utf8');
 
         //query
@@ -22,7 +22,7 @@ class DB
         $data = null;
 
         //open connection
-        $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE,8111);
+        $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
         mysqli_set_charset($conn, 'utf8');
 
         //query

@@ -39,4 +39,15 @@ class FeedbackModel extends DB
         $sql = "update feedback set status = 1, updated_at = '$updated_at' where id = $id";
         $this->execute($sql);
     }
+
+    public function getAllFeedback()
+    {
+        $sql = "SELECT feedback.id,user.fullname,user.phone,user.email,feedback.note,feedback.updated_at,product.title,feedback.status
+                FROM feedback,user,product
+                WHERE feedback.user_id = user.id AND feedback.product_id=product.id
+                order by status asc, updated_at desc";
+        $data = $this->executeResult($sql);
+        return $data;
+    }
+
 }
