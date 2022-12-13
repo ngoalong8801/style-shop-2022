@@ -40,7 +40,7 @@ class UserAdmin extends Controller
             $id = getPost('id');
             $fullname = getPost('fullname');
             $email = getPost('email');
-            $phone= getPost('phone');
+            $phone = getPost('phone');
             $address = getPost('address');
             $password = getPost('password');
             $role_id = getPost('role_id');

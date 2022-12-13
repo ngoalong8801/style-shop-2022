@@ -15,8 +15,8 @@ require_once('mvc/views/blocks/header_admin.php');
 					<th>Name</th>
 					<th>Phone</th>
 					<th>Email</th>
-					<th>Phone name</th>
-					<th>Feedback</th>
+					<th>Product</th>
+					<th>Note</th>
 					<th>Created</th>
 					<th style="width: 120px"></th>
 				</tr>

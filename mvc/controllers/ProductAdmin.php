@@ -10,12 +10,13 @@ class ProductAdmin extends Controller
         $this->productModel = $this->model("ProductModel");
     }
 
-    public function GetPage()
+    public function GetPage($error = 0)
     {
         $allProduct = $this->productModel->getAllProduct(1);
 
         $this->view("product/productAdmin", [
-            "allProduct" => $allProduct
+            "allProduct" => $allProduct,
+            "sqlerror" => $error
         ]);
     }
 
@@ -74,7 +75,12 @@ class ProductAdmin extends Controller
 
     public function Delete($id)
     {
-        $this->productModel->selectProductDelete($id);
-        header('Location: http://localhost/style-shop-2022/productAdmin');
+        $result = $this->productModel->selectProductDelete($id);
+        if ($result){
+            header('Location: http://localhost/style-shop-2022/productAdmin');
+        }
+        else{
+            header('Location: http://localhost/style-shop-2022/productAdmin/getPage/1');
+        }
     }
 }

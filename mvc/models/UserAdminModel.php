@@ -29,7 +29,6 @@ class UserAdminModel extends DB
         $role = $this->executeResult($sql);
         return $role;
     }
- 
     public function updateuser($id, $fullname, $email, $role_id, $phone, $address, $password, $avatar)
     {
         $sql = "select * from user where email = '$email' and id <> $id";

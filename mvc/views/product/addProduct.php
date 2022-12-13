@@ -10,8 +10,8 @@ require_once('mvc/views/blocks/header_admin.php');
 
 <div class="row" style="margin-top: 20px;">
     <div class="col-md-12 table-responsive">
-        <h3>Add new phone</h3>
-        <a href="http://localhost/style-shop-2022/ProductAdmin" class="btn btn-outline-primary">Back to Phone list</a>
+        <h3>Add New Product</h3>
+        <a href="http://localhost/style-shop-2022/ProductAdmin" class="btn btn-outline-primary">Back to Product list</a>
         <div class="panel panel-primary">
             <div class="panel-body">
                 <form method="post" enctype="multipart/form-data" action="http://localhost/style-shop-2022/ProductAdmin/PostAdd">

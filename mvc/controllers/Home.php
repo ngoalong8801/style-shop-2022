@@ -314,10 +314,15 @@ class Home extends Controller
         }
     }
 
-    public function ManageAccount()
+    public function viewOrder($id)
     {
+        $orderModel = $this->model("OrderModel");
+        $detailorder = $orderModel->getDetailOrder($id);
+        $orderItem = $orderModel->getOrderItem($id);
         $this->view("home", [
-            "render" => "ManageAccount", 
+            "render" => "orderDetail",
+            "detailOrder" => $detailorder,
+            "orderItem" => $orderItem,
             "allCategory" => $this->allCategory
         ]);
     }
@@ -327,6 +332,27 @@ class Home extends Controller
         $orderSuccessModel = $this->model("OrderModel");
         $orderSuccessModel->updateStatusOrder($orderId);
         $orderItem = $orderSuccessModel->getorders($user_id);
+
+        $this->view("home", [
+            "render" => "quanlydonhang",
+            "allCategory" => $this->allCategory,
+            "orderItem" => $orderItem
+        ]);
+    }
+
+    public function ManageAccount()
+    {
+        $this->view("home", [
+            "render" => "ManageAccount", 
+            "allCategory" => $this->allCategory
+        ]);
+    }
+
+    public function quanlydonhang($user_id)
+    {
+        $orderSuccessModel = $this->model("OrderModel");
+        $orderItem = $orderSuccessModel->getorders($user_id);
+
 
         $this->view("home", [
             "render" => "quanlydonhang",

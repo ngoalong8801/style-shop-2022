@@ -71,4 +71,11 @@ function changeSession($key, $newvalue) {
 	$_SESSION["$key"] = $newvalue;
 }
 
+function fixUrl($photo, $rootPath = "http://localhost/SPhone/public/images/") {
+	if(stripos($photo, 'http://') !== false || stripos($photo, 'https://') !== false) {
+	} else {
+		$photo = $rootPath.$photo;
+	}
 
+	return $photo;
+}

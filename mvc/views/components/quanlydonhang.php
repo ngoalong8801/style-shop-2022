@@ -1,5 +1,5 @@
 <h4 style="margin:70px 0 10px 50px ">Quản lý đơn hàng</h4>
-<table class="table table-striped">
+<table class="table table-striped table-dark">
   <thead>
     <tr>
       <th scope="col">STT</th>
@@ -8,7 +8,7 @@
       <th scope="col">Ngày đặt hàng</th>
       <th scope="col">Tổng số tiền</th>
       <th scope="col">Trạng thái</th>
-      <th scope="col"></th>
+      <th scope="col">Xác nhận</th>
     </tr>
   </thead>
   <tbody>
@@ -30,7 +30,9 @@
       echo '</td>';
       if ($data["orderItem"][$i]["status"] != 3)
         echo '<td><a href="http://localhost/style-shop-2022/Home/confirmOrder/' . $data["orderItem"][$i]["id"] . '/' . $user["id"] . '"><button class="btn btn-danger">Đã nhận hàng</button><a/></td>
-      </tr>';
+        </tr>';
+      else 
+        echo '<td>Đã nhận hàng</td></tr>';
     }
     ?>
   </tbody>
