@@ -17,7 +17,7 @@ require_once('mvc/views/blocks/header_admin.php');
 					<tr>
 						<th>No</th>
 						<th class="imgCol">Image</th>
-						<th>Brand</th>
+						<th>Category</th>
 						<th>Name</th>
 						<th>Base Price</th>
 						<th>Final Price</th>

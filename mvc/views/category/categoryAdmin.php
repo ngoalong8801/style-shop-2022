@@ -55,14 +55,14 @@ require_once('mvc/views/blocks/header_admin.php');
 		var clicked = jQuery(this);
 		var clicked_url = clicked.attr("href");
 
-		var msg = confirm("Are you sure you want to delete this brand?");
+		var msg = confirm("Bạn có chắc rằng muốn xoá danh mục này?");
 		if (msg == true) {
 			window.location.href = clicked_url;
 		}
 	});
 </script>
 <script type="text/javascript">
-	if (deleteSuccess == 1) {
+	if (deleteSuccess.innerHTML == 1) {
 		alert("Xóa thất bại!!! Vui lòng xóa hết sản phẩm của danh mục!!!")
 	}
 </script>

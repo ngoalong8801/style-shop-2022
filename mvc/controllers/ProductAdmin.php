@@ -37,7 +37,7 @@ class ProductAdmin extends Controller
             $photo = getPost('photo');
             $category_id = getPost('category_id');
             $description = getPost('description');
-            $this->productModel->insertProduct($category_id, $title, $price, $discount, $photo, $description);
+            $this->productModel->addProduct($category_id, $title, $price, $discount, $photo, $description);
         }
         header('Location: http://localhost/style-shop-2022/productAdmin');
     }

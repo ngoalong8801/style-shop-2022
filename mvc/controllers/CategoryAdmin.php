@@ -28,7 +28,7 @@ class CategoryAdmin extends Controller
     {
         if (isset($_POST)) {
             $name = getPost("name");
-            $this->categoryModel->insertCategory($name);
+            $this->categoryModel->addCategory($name);
         }
         header('Location: http://localhost/style-shop-2022/CategoryAdmin');
     }

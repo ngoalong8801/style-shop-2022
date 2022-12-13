@@ -5,8 +5,7 @@ if ($user != null) {
   if ($user["role_id"] == 1) {
     header('Location: http://localhost/style-shop-2022/Login');
   }
-} else
-  header('Location: http://localhost/style-shop-2022/Home');
+} else header('Location: http://localhost/style-shop-2022/Home');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +14,7 @@ if ($user != null) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    <?= $title ?>
-  </title>
+  <title><?= $title ?></title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,8 +23,7 @@ if ($user != null) {
   <!-- Material Icon -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
   <!-- DataTables -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap4.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap4.min.css" />
   <!-- Custom css -->
   <?php define('SCRIPT_ROOT', 'http://localhost/style-shop-2022'); ?>
   <link rel="stylesheet" href="<?php echo SCRIPT_ROOT . '/public/css/admin_style.css'; ?>">
@@ -56,28 +52,22 @@ if ($user != null) {
       </a>
     </div>
       <div class="list-group list-group-flush my-3">
-        <a href="http://localhost/style-shop-2022/OrderAdmin"
-          class="<?php echo $activeNav == 'order' ? 'active ' : ' '; ?>list-group-item list-group-item-action bg-transparent second-text">
-          <span class="material-icons-sharp me-2">receipt_long</span>Order
+        <a href="http://localhost/style-shop-2022/OrderAdmin" class="<?php echo $activeNav == 'order' ? 'active ' : ' '; ?>list-group-item list-group-item-action bg-transparent second-text">
+          <span class="material-icons-sharp me-2">shopping_cart</span>Order
         </a>
-        <a href="http://localhost/style-shop-2022/CategoryAdmin"
-          class="<?php echo $activeNav == 'category' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+        <a href="http://localhost/style-shop-2022/CategoryAdmin" class="<?php echo $activeNav == 'category' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
           <span class="material-icons-sharp me-2">format_list_bulleted</span>Category
         </a>
-        <a href="http://localhost/style-shop-2022/ProductAdmin"
-          class="<?php echo $activeNav == 'phone' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
-          <span class="material-icons-sharp me-2">smartphone</span>Phone
+        <a href="http://localhost/style-shop-2022/ProductAdmin" class="<?php echo $activeNav == 'phone' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+          <span class="material-icons-sharp me-2">list_alt</span>Products
         </a>
-        <a href="http://localhost/style-shop-2022/UserAdmin"
-          class="<?php echo $activeNav == 'user' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+        <a href="http://localhost/style-shop-2022/UserAdmin" class="<?php echo $activeNav == 'user' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
           <span class="material-icons-sharp me-2">person_outline</span>User
         </a>
-        <a href="http://localhost/style-shop-2022/Feedback"
-          class="<?php echo $activeNav == 'feedback' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
+        <a href="http://localhost/style-shop-2022/Feedback" class="<?php echo $activeNav == 'feedback' ? 'active ' : ' '; ?>list-group-item list-group-item-action transparent second-text fw-bold">
           <span class="material-icons-sharp me-2">chat</span>Feedback
         </a>
-        <a href="http://localhost/style-shop-2022/Login/UserLogout"
-          class="list-group-item list-group-item-action transparent second-text fw-bold">
+        <a href="http://localhost/style-shop-2022/Login/UserLogout" class="list-group-item list-group-item-action transparent second-text fw-bold">
           <span class="material-icons-sharp me-2">logout</span>Logout
         </a>
 
@@ -93,8 +83,7 @@ if ($user != null) {
           <h2 class="fs-2 m-0">Dashboard</h2>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </nav>

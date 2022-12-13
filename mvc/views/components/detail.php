@@ -1,4 +1,9 @@
-<h4 style="margin:70px 0 10px 50px ">Chi tiết đơn hàng</h4>
+<section class="bg-img1 txt-center p-lr-15 p-tb-92"
+        style="background-image: url('http://localhost/style-shop-2022/public/images/bg-02.jpg');">
+        <h2 class="ltext-105 cl0 txt-center">
+            Chi tiết đơn hàng
+        </h2>
+</section>
 <table class="table table-striped table-dark">
   <thead>
     <tr>
