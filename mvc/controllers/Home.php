@@ -314,18 +314,6 @@ class Home extends Controller
         }
     }
 
-    public function quanlydonhang($user_id)
-    {
-        $orderSuccessModel = $this->model("OrderModel");
-        $orderItem = $orderSuccessModel->getorders($user_id);
-
-        $this->view("home", [
-            "render" => "quanlydonhang",
-            "allCategory" => $this->allCategory,
-            "orderItem" => $orderItem
-        ]);
-    }
-
     public function viewOrder($id)
     {
         $orderModel = $this->model("OrderModel");
@@ -357,6 +345,18 @@ class Home extends Controller
         $this->view("home", [
             "render" => "ManageAccount", 
             "allCategory" => $this->allCategory
+        ]);
+    }
+
+    public function quanlydonhang($user_id)
+    {
+        $orderSuccessModel = $this->model("OrderModel");
+        $orderItem = $orderSuccessModel->getorders($user_id);
+
+        $this->view("home", [
+            "render" => "quanlydonhang",
+            "allCategory" => $this->allCategory,
+            "orderItem" => $orderItem
         ]);
     }
 
