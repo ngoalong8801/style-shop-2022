@@ -22,6 +22,8 @@ if ($data["render"] == "home") {
     require_once "mvc/views/components/quanlydonhang.php";
 } else if ($data["render"] == "orderDetail") {
     require_once "mvc/views/components/detail.php";
+} else if ($data["render"] == "ManageAccount") {
+    require_once "mvc/views/components/updateInfoUser.php";
 }
 
 require_once "mvc/views/blocks/footer.php";

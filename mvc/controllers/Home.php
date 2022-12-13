@@ -352,4 +352,12 @@ class Home extends Controller
         ]);
     }
 
+    public function ManageAccount()
+    {
+        $this->view("home", [
+            "render" => "ManageAccount", 
+            "allCategory" => $this->allCategory
+        ]);
+    }
+
 }

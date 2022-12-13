@@ -2,11 +2,11 @@
 
 class UserModel extends DB
 {
-    public function InsertNewUser($fullname, $email, $password, $phone_number, $address)
+    public function InsertNewUser($fullname, $email, $password, $phone, $address)
     {
         $result = false;
 
-        if ($fullname == '' || $email == '' || $password == '' || $phone_number == '' || $address == ''  || strlen($password) < 6) {
+        if ($fullname == '' || $email == '' || $password == '' || $phone == '' || $address == ''  || strlen($password) < 6) {
             return [
                 "result" => $result
             ];
@@ -18,7 +18,7 @@ class UserModel extends DB
             ];
         } else {
             $qr = "INSERT INTO user(fullname, email, phone, address, password, role_id, deleted)
-            VALUES('$fullname','$email','$phone_number','$address','$password',1, 0)";
+            VALUES('$fullname','$email','$phone','$address','$password',1, 0)";
             $this->execute($qr);
             $result = true;
             return [
