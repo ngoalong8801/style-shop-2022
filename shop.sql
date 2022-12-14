@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `shop_ltw`
 --
+CREATE DATABASE shop_ltw;
+USE shop_ltw;
 
 -- --------------------------------------------------------
 
@@ -118,20 +120,6 @@ INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `price`, `num`, `to
 (103, 61, 3, 380000, 1, 380000),
 (104, 61, 4, 380000, 1, 380000),
 (105, 62, 10, 320000, 2, 640000);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `payments`
---
-
-CREATE TABLE `payments` (
-  `id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `money` float NOT NULL COMMENT 'số tiền thanh toán',
-  `note` varchar(255) DEFAULT NULL COMMENT 'ghi chú thanh toán'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -265,13 +253,6 @@ ALTER TABLE `order_details`
   ADD KEY `a` (`order_id`);
 
 --
--- Chỉ mục cho bảng `payments`
---
-ALTER TABLE `payments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `paymentUserid` (`user_id`);
-
---
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
@@ -320,12 +301,6 @@ ALTER TABLE `order_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
--- AUTO_INCREMENT cho bảng `payments`
---
-ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
@@ -366,11 +341,6 @@ ALTER TABLE `orders`
 ALTER TABLE `order_details`
   ADD CONSTRAINT `a` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
---
--- Các ràng buộc cho bảng `payments`
---
-ALTER TABLE `payments`
-  ADD CONSTRAINT `paymentUserid` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
 -- Các ràng buộc cho bảng `product`
