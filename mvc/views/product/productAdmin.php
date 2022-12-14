@@ -1,5 +1,5 @@
 <?php
-$title = 'Product';
+$title = 'Product Management';
 $activeNav = "Product";
 require_once('mvc/views/blocks/header_admin.php');
 ?>
