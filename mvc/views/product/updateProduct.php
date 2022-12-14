@@ -1,5 +1,5 @@
 <?php
-$title = 'Phone';
+$title = 'Product';
 $isActive = "ProductAdmin";
 require_once('mvc/views/blocks/header_admin.php');
 
