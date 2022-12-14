@@ -219,7 +219,8 @@ class Home extends Controller
         $this->view("home", [
             "render" => "checkout",
             "allCategory" => $this->allCategory,
-            "totalMoney" => $total
+            "totalMoney" => $total,
+            "cart" => $this->getCart(),
         ]);
     }
 
@@ -323,7 +324,8 @@ class Home extends Controller
             "render" => "orderDetail",
             "detailOrder" => $detailorder,
             "orderItem" => $orderItem,
-            "allCategory" => $this->allCategory
+            "allCategory" => $this->allCategory,
+            "cart" => $this->getCart(),
         ]);
     }
 
@@ -336,7 +338,8 @@ class Home extends Controller
         $this->view("home", [
             "render" => "quanlydonhang",
             "allCategory" => $this->allCategory,
-            "orderItem" => $orderItem
+            "orderItem" => $orderItem,
+            "cart" => $this->getCart(),
         ]);
     }
 
