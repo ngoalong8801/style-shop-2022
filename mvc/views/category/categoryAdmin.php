@@ -1,5 +1,5 @@
 <?php
-$title = 'Quản Lý Danh Mục Sản Phẩm';
+$title = 'Category Management';
 $activeNav = "category";
 require_once('mvc/views/blocks/header_admin.php');
 ?>
