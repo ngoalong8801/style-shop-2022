@@ -12,7 +12,7 @@ require_once('mvc/views/blocks/header_admin.php');
 	<div class="row mt-3">
 
 		<div class="col">
-			<table id="phoneList" class="table bg-white rounded shadow-sm table-hover">
+			<table id="productList" class="table bg-white rounded shadow-sm table-hover">
 				<thead>
 					<tr>
 						<th>No</th>
