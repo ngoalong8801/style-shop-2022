@@ -344,7 +344,8 @@ class Home extends Controller
     {
         $this->view("home", [
             "render" => "ManageAccount", 
-            "allCategory" => $this->allCategory
+            "allCategory" => $this->allCategory,
+            "cart" => $this->getCart(),
         ]);
     }
 
@@ -357,7 +358,8 @@ class Home extends Controller
         $this->view("home", [
             "render" => "quanlydonhang",
             "allCategory" => $this->allCategory,
-            "orderItem" => $orderItem
+            "orderItem" => $orderItem,
+            "cart" => $this->getCart(),
         ]);
     }
 }
