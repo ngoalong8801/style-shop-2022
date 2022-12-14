@@ -26,7 +26,7 @@ require_once('mvc/views/blocks/header_admin.php');
                                 <textarea class="form-control" rows="5" name="description" id="description"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="photo">photo:</label>
+                                <label for="photo">Photo:</label>
                                 <input type="text" class="form-control" id="photo" name="photo">
                                 <img id="photo_img" src="" style="max-height: 160px; margin-top: 5px; margin-bottom: 15px;">
                             </div>

@@ -52,11 +52,11 @@ class UserAdmin extends Controller
             $location = getPost('updateInfoUser');
  
             $result = $this->userModel->updateuser($id, $fullname, $email, $role_id, $phone, $address, $password, $avatar);
-            if ($result) {
+/*            if ($result) {
                 $_SESSION['user'] = array("fullname" => $fullname, "email" => $email, 
                 "id" => $id, "role_id" => $role_id, "phone" => $phone,
                 "address" => $address, "password" => $password, "avatar" => $avatar);
-            }
+            }*/ //Chuyển từ admin sang user được update thông tin
             if ($location == 1) {
                 header('Location: http://localhost/style-shop-2022/Home/ManageAccount');
             } else header('Location: http://localhost/style-shop-2022/UserAdmin');
