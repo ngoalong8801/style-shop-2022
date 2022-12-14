@@ -1,6 +1,6 @@
 <?php
-$title = 'Phone';
-$activeNav = "phone";
+$title = 'Product';
+$activeNav = "Product";
 require_once('mvc/views/blocks/header_admin.php');
 
 ?>
