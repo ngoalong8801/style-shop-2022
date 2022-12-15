@@ -4,6 +4,10 @@
             Quản lý đơn hàng
         </h2>
 </section>
+
+
+<section class="bg0 p-t-104 p-b-116">
+    <div class="container">
 <table class="table table-striped table-dark">
   <thead>
     <tr>
@@ -30,15 +34,15 @@
       if ($data["orderItem"][$i]["status"] == 0)
         echo 'Chờ duyệt';
       else if ($data["orderItem"][$i]["status"] == 1) echo "Đang giao hàng";
-      else if ($data["orderItem"][$i]["status"] == 4) echo "Đã thanh toán";
+      else if ($data["orderItem"][$i]["status"] == 2) echo "Đã huỷ";
       else echo "Giao dịch hoàn tất!";
       echo '</td>';
-      if ($data["orderItem"][$i]["status"] != 3)
+      if ($data["orderItem"][$i]["status"] == 1)
         echo '<td><a href="http://localhost/style-shop-2022/Home/confirmOrder/' . $data["orderItem"][$i]["id"] . '/' . $user["id"] . '"><button class="btn btn-danger">Đã nhận hàng</button><a/></td>
         </tr>';
-      else 
-        echo '<td>Đã nhận hàng</td></tr>';
     }
     ?>
   </tbody>
 </table>
+  </div>
+  </section>
