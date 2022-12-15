@@ -1,5 +1,4 @@
    <!-- Slider -->
-
    <section class="section-slide">
        <div class="wrap-slick1 rs2-slick1">
            <div class="slick1">
@@ -250,7 +249,7 @@
                    </button>
                    <?php
                     foreach ($data['allCategory'] as $category) {
-                        echo '<button  style="outline:none" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".' . strtolower($category['name'])  . '">
+                        echo '<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".' . strtolower($category['name'])  . '">
                             ' . $category['name']  . '
                           </button>';
                     }
@@ -277,23 +276,22 @@
                            name="search-product" placeholder="Search">
                    </div>
                </form>
-               <!-- <ul style="border-radius: 7px;width: 20%;z-index: 9999;background-color: #d2d3d4;right: 435px;top: 49px;"
+               <ul style="border-radius: 7px;width: 20%;z-index: 9999;background-color: #d2d3d4;right: 435px;top: 49px;"
                    class="list-group" id="output_search1">
-               </ul> -->
+               </ul>
 
 
            </div>
+       </div>
 
-
-           <div class="row isotope-grid">
-               <?php
+       <div class="row isotope-grid">
+           <?php
                 foreach ($data['allProduct'] as $product)
                     echo '<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ' . strtolower($product['category_name'])   . '">
             <!-- Block2 -->
-           
-            <div class="block2" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; padding:10px; border-radius:5px" >
+            <div class="block2">
                 <div class="block2-pic hov-img0">
-                    <img style="width: 200; height:200px" src="' . $product['photo'] . '" alt="IMG-PRODUCT">
+                    <img src="' . $product['photo'] . '" alt="IMG-PRODUCT">
                     <a href="http://localhost/style-shop-2022/Home/productDetail/' . $product['id'] . '"
                         class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
                         Quick View
@@ -312,28 +310,23 @@
                         </span>
                     </div>
 
-                    <div class="block2-txt-child2 flex-r p-t-3">
-                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                    <img class="icon-heart1 dis-block trans-04" src="http://localhost/style-shop-2022/public/images/icons/icon-heart-01.png" alt="ICON">
-                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="http://localhost/style-shop-2022/public/images/icons/icon-heart-02.png" alt="ICON">
-                                </a>
-                            </div>
+                  
                 </div>
             </div>
         </div>';
                 ?>
-           </div>
+       </div>
 
-           <!-- Pagination -->
-           <div class="flex-c-m flex-w w-full p-t-38">
-               <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
-                   1
-               </a>
+       <!-- Pagination -->
+       <div class="flex-c-m flex-w w-full p-t-38">
+           <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
+               1
+           </a>
 
-               <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
-                   2
-               </a>
-           </div>
+           <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
+               2
+           </a>
+       </div>
        </div>
    </section>
 

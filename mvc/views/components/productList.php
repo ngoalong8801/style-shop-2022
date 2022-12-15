@@ -17,7 +17,7 @@
               </div>
 
               <div class="flex-w flex-c-m m-tb-10">
-             
+
 
                   <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
                       <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
@@ -34,18 +34,18 @@
                       </button>
 
                       <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" id="search-product"
-                           name="search-product" placeholder="Search">
+                          name="search-product" placeholder="Search">
                   </div>
                   <ul style="border-radius: 7px;width: 20%;z-index: 9999;background-color: #d2d3d4;right: 435px;top: 49px;"
-                   class="list-group" id="output_search1">
-               </ul>
+                      class="list-group" id="output_search1">
+                  </ul>
               </div>
 
-             
+
           </div>
 
           <div class="row isotope-grid">
-            <?php
+              <?php
             foreach ($data['allProduct'] as $product)
               echo '<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item '. strtolower($product['category_name'])   . '">
                   <!-- Block2 -->
@@ -55,7 +55,7 @@
 
                           <a href="http://localhost/style-shop-2022/Home/productDetail/' . $product['id'] . '"
                               class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
-                              Quick View abc
+                              Quick View 
                           </a>
                       </div>
 
@@ -119,6 +119,6 @@ $(document).ready(function() {
         $("#output_search1").html("");
     });
 });
-   </script>
+  </script>
   <!--===============================================================================================-->
   <script src="http://localhost/style-shop-2022/public/js/main.js"></script>

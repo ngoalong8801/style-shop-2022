@@ -18,32 +18,30 @@
                        </h3>
 
                        <p class="stext-113 cl6 p-b-26">
-                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non
-                           auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt
-                           augue. Orci varius natoque penatibus et magnis dis parturient montes,
-                           nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue.
-                           Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                           Maecenas gravida justo eu arcu egestas
-                           convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim
-                           dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum
-                           euismod tortor, eget facilisis diam faucibus
-                           et. Morbi a tempor elit.
+                           InStyle is your source for fashion, beauty, celebrity, and lifestyle content that delights,
+                           informs, and entertains. If there's a new denim silhouette, you'll find it here — as well as
+                           a delicate explanation for why it might be stressing people out. We get first dibs on new
+                           beauty products and only share what's worth a try, with ingredient breakdowns and
+                           step-by-step routines to follow. We question everything and let you know which brands can
+                           back up their bona-fides ("clean" and "sustainable" are words that mean things, and we don't
+                           let anyone skate past with greenwashed jargon).
+
+
                        </p>
 
                        <p class="stext-113 cl6 p-b-26">
-                           Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna.
-                           Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque
-                           congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a
-                           arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum,
-                           neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo
-                           efficitur, quam velit convallis ipsum, et maximus
-                           enim ligula ac ligula.
+                           ylie has worked in digital media for the past decade. She joined InStyle in 2019 as the
+                           Senior Lifestyle Editor overseeing the site's wellness coverage, including health, fitness,
+                           astrology, and sex and relationships. Kylie is now the associate editorial director for the
+                           brand, where she works on cross-vertical strategy as well as lifestyle and wellness features
+                           for the site and InStyle's digital issues. Previously, she was an editor at Shape for nearly
+                           six years.
+
+                           Kylie graduated with a B.A. in journalism from Northwestern University's Medill School of
+                           Journalism and a minor in French and lives in Brooklyn, NY.
                        </p>
 
-                       <p class="stext-113 cl6 p-b-26">
-                           Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call
-                           us on (+1) 96 716 6879
-                       </p>
+
                    </div>
                </div>
 
@@ -64,16 +62,12 @@
                        </h3>
 
                        <p class="stext-113 cl6 p-b-26">
-                           Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed
-                           consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                           ac turpis egestas. Nullam maximus mauris sit amet odio convallis, in
-                           pharetra magna gravida. Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra
-                           odio. Pellentesque ac velit egestas, luctus arcu non, laoreet mauris. Sed in ipsum tempor,
-                           consequat odio in, porttitor ante. Ut mauris
-                           ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae mi vestibulum,
-                           nec venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus maximus
-                           euismod. Pellentesque vulputate massa ut
-                           nisl hendrerit, eget elementum libero iaculis.
+                           InStyle Magazine was founded in 1994 and is part of the Dotdash Meredith publishing family.
+                           Dotdash Meredith, an operating business of IAC, is the largest digital and print publisher in
+                           America. From mobile to magazines, nearly 200 million people trust us to help them make
+                           decisions, take action, and find inspiration. Dotdash Meredith's over 50 iconic brands
+                           include PEOPLE, Better Homes & Gardens, Verywell, FOOD & WINE, The Spruce, Allrecipes,
+                           Byrdie, REAL SIMPLE, Investopedia, Southern Living, and more.
                        </p>
 
                        <div class="bor16 p-l-29 p-b-9 m-t-22">
@@ -84,7 +78,7 @@
                            </p>
 
                            <span class="stext-111 cl8">
-                               - Steve Job’s
+                               - Hayley Mason
                            </span>
                        </div>
                    </div>

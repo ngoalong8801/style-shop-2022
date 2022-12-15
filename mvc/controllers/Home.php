@@ -224,6 +224,42 @@ class Home extends Controller
         ]);
     }
 
+    // public function search()
+    // {
+    //     if (isset($_POST["action"])) {
+
+    //         $search_name = $_POST["search_name"];
+
+    //         $result = $this->productModel->searchProduct($search_name);
+    //         $output = '<i style="right: 10px;position: absolute;top: 4px;z-index:9999" class="fas fa-times"></i>';
+    //         foreach ($result as $rows) {
+
+    //             $output .= '
+    //             <li style="margin: 5px 0;" class="list-group">
+    //                 <div style="margin: 0 auto;" class="row">
+    //                     <div class="col-4" style="">
+    //                         <div class="image">
+    //                         <a href="http://localhost/style-shop-2022/Home/productDetail/' . $rows["id"] . '"><img src="' . $rows["photo"] . '" style="width: 75%;padding-right: 0;"></a>
+    //                         </div>
+    //                     </div>
+    //                     <div class="col-8" style="">
+    //                         <div class="name-product">
+    //                             <a href="http://localhost/style-shop-2022/Home/productDetail/' . $rows["id"] . '">' . $rows["title"] . '</a>
+    //                         </div>
+    //                         <div class="price">
+    //                             <p>' . number_format($rows["price"]) . '&nbspVNĐ</p>
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //             </li>
+    //             ';
+    //         }
+    //         if ($output == '<i style="right: 10px;position: absolute;top: 4px;z-index:9999" class="fas fa-times"></i>')
+    //             $output .= '<li style="margin: 5px 0;" class="list-group">
+    //                         Không tìm thấy sản phẩm</li>';
+    //         echo $output;
+    //     }
+    // }
     public function search()
     {
         if (isset($_POST["action"])) {
@@ -231,9 +267,10 @@ class Home extends Controller
             $search_name = $_POST["search_name"];
 
             $result = $this->productModel->searchProduct($search_name);
-            $output = '<i style="right: 10px;position: absolute;top: 4px;z-index:9999" class="fas fa-times"></i>';
+        
+            $output = '';
+            if(count($result) > 0) {
             foreach ($result as $rows) {
-
                 $output .= '
                 <li style="margin: 5px 0;" class="list-group">
                     <div style="margin: 0 auto;" class="row">
@@ -254,13 +291,15 @@ class Home extends Controller
                 </li>
                 ';
             }
-            if ($output == '<i style="right: 10px;position: absolute;top: 4px;z-index:9999" class="fas fa-times"></i>')
-                $output .= '<li style="margin: 5px 0;" class="list-group">
-                            Không tìm thấy sản phẩm</li>';
+        }
+           
+               else{
+                $output .= '<li style="margin: 5px 0; text-align: center" class="list-group">
+                Không tìm thấy sản phẩm</li>';
+               }
             echo $output;
         }
     }
-
     public function about()
     {
 

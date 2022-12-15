@@ -1,5 +1,5 @@
 <?php
 define('HOST', 'localhost');
-define('DATABASE', 'shop');
+define('DATABASE', 'style_shop');
 define('USERNAME', 'root');
 define('PASSWORD', '');

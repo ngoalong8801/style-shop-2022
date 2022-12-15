@@ -74,3 +74,9 @@
     height: 100%;
     display: block !important;
 }
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #dbcc8f !important;
+}
