@@ -6,7 +6,7 @@
   </ol>
 </nav>
 <!-- Card -->
-<div id="wrapper">
+<div id="wrapper" class="container">
   <div class="pt-4 pb-3">
 
     <!-- Grid row -->

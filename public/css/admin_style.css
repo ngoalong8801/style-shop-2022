@@ -36,12 +36,11 @@ a {
 #wrapper {
     overflow-x: hidden;
     background-image: linear-gradient(to right,
-            #dce1eb);
+            #dce1eb);   
 }
 
 #sidebar-wrapper {
     min-height: 100vh;
-    margin-left: -15rem;
     -webkit-transition: margin 0.25s ease-out;
     -moz-transition: margin 0.25s ease-out;
     -o-transition: margin 0.25s ease-out;
@@ -108,14 +107,18 @@ a {
     gap: 1rem;
 }
 
+.container-fluid {overflow-x: auto;}
+
 #phoneList img {
     width: 3.5rem;
     height: 4rem;
 }
-
-
-
-
+#sidebar-wrapper {
+    margin-left: -15rem;
+}
+#sidebar-wrapper.active {
+    margin-left: 0;
+}
 
 
 
@@ -131,5 +134,14 @@ a {
 
     #wrapper.toggled #sidebar-wrapper {
         margin-left: -15rem;
+    }
+
+    #sidebar-wrapper {
+        min-width: 250px;
+        max-width: 250px;
+    }
+    
+    #sidebar-wrapper.active {
+        margin-left: -250px!important;
     }
 }

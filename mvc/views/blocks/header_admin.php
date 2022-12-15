@@ -51,7 +51,7 @@ if ($user != null) {
         <img src="http://localhost/style-shop-2022/public/images/icons/logo-01.png" alt="IMG-LOGO" style="width: 133px; height: 17px;">
       </a>
     </div>
-      <div class="list-group list-group-flush my-3">
+      <div class="list-group list-group-flush my-3 active">
         <a href="http://localhost/style-shop-2022/OrderAdmin" class="<?php echo $activeNav == 'order' ? 'active ' : ' '; ?>list-group-item list-group-item-action bg-transparent second-text">
           <span class="material-icons-sharp me-2">shopping_cart</span>Order
         </a>
@@ -79,7 +79,19 @@ if ($user != null) {
       <!-- ===========NavBar============ -->
       <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
         <div class="d-flex align-items-center">
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+            </button>
           <h2 class="fs-2 m-0">Dashboard</h2>
         </div>
       </nav>
       <!-- ===========NavBar============ -->
+<script type="text/javascript">
+$(document).ready(function () {
+
+$('#sidebarCollapse').on('click', function () {
+    $('#sidebar-wrapper').toggleClass('active');
+});
+
+});
+</script>
