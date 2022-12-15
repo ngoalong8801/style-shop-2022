@@ -219,8 +219,7 @@ class Home extends Controller
         $this->view("home", [
             "render" => "checkout",
             "allCategory" => $this->allCategory,
-            "totalMoney" => $total,
-            "cart" => $this->getCart(),
+            "totalMoney" => $total
         ]);
     }
 
@@ -231,9 +230,10 @@ class Home extends Controller
             $search_name = $_POST["search_name"];
 
             $result = $this->productModel->searchProduct($search_name);
-            $output = '<i style="right: 10px;position: absolute;top: 4px;z-index:9999" class="fas fa-times"></i>';
+        
+            $output = '';
+            if(count($result) > 0) {
             foreach ($result as $rows) {
-
                 $output .= '
                 <li style="margin: 5px 0;" class="list-group">
                     <div style="margin: 0 auto;" class="row">
@@ -254,9 +254,12 @@ class Home extends Controller
                 </li>
                 ';
             }
-            if ($output == '<i style="right: 10px;position: absolute;top: 4px;z-index:9999" class="fas fa-times"></i>')
-                $output .= '<li style="margin: 5px 0;" class="list-group">
-                            Không tìm thấy sản phẩm</li>';
+        }
+           
+               else{
+                $output .= '<li style="margin: 5px 0; text-align: center" class="list-group">
+                Không tìm thấy sản phẩm</li>';
+               }
             echo $output;
         }
     }
@@ -315,17 +318,11 @@ class Home extends Controller
         }
     }
 
-    public function viewOrder($id)
+    public function ManageAccount()
     {
-        $orderModel = $this->model("OrderModel");
-        $detailorder = $orderModel->getDetailOrder($id);
-        $orderItem = $orderModel->getOrderItem($id);
         $this->view("home", [
-            "render" => "orderDetail",
-            "detailOrder" => $detailorder,
-            "orderItem" => $orderItem,
-            "allCategory" => $this->allCategory,
-            "cart" => $this->getCart(),
+            "render" => "ManageAccount", 
+            "allCategory" => $this->allCategory
         ]);
     }
 
@@ -338,31 +335,7 @@ class Home extends Controller
         $this->view("home", [
             "render" => "quanlydonhang",
             "allCategory" => $this->allCategory,
-            "orderItem" => $orderItem,
-            "cart" => $this->getCart(),
-        ]);
-    }
-
-    public function ManageAccount()
-    {
-        $this->view("home", [
-            "render" => "ManageAccount", 
-            "allCategory" => $this->allCategory,
-            "cart" => $this->getCart(),
-        ]);
-    }
-
-    public function quanlydonhang($user_id)
-    {
-        $orderSuccessModel = $this->model("OrderModel");
-        $orderItem = $orderSuccessModel->getorders($user_id);
-
-
-        $this->view("home", [
-            "render" => "quanlydonhang",
-            "allCategory" => $this->allCategory,
-            "orderItem" => $orderItem,
-            "cart" => $this->getCart(),
+            "orderItem" => $orderItem
         ]);
     }
 }
