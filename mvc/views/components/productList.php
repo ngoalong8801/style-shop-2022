@@ -33,9 +33,12 @@
                           <i class="zmdi zmdi-search"></i>
                       </button>
 
-                      <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product"
-                          placeholder="Search">
+                      <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" id="search-product"
+                           name="search-product" placeholder="Search">
                   </div>
+                  <ul style="border-radius: 7px;width: 20%;z-index: 9999;background-color: #d2d3d4;right: 435px;top: 49px;"
+                   class="list-group" id="output_search1">
+               </ul>
               </div>
 
              
@@ -92,6 +95,30 @@
       </div>
   </div>
 
-
+  <script type="text/javascript">
+$(document).ready(function() {
+    var action = "search";
+    $("#search-product").keyup(function() {
+        var search_name = $("#search-product").val();
+        if ($("#search-product").val() != '') {
+            $.ajax({
+                url: "http://localhost/style-shop-2022/Home/search",
+                method: "POST",
+                data: {
+                    action: action,
+                    search_name: search_name
+                },
+                success: function(data) {
+                    $("#output_search1").html(data);
+                }
+            });
+        } else $("#output_search1").html("");
+    });
+    $(window).click(function() {
+        //Hide the menus if visible
+        $("#output_search1").html("");
+    });
+});
+   </script>
   <!--===============================================================================================-->
   <script src="http://localhost/style-shop-2022/public/js/main.js"></script>

@@ -24,7 +24,7 @@ foreach ($cart as $item) {
 <html lang="en">
 
 <head>
-    <title>Home 03</title>
+    <title>Style Shop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
