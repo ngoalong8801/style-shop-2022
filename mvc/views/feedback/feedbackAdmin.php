@@ -4,9 +4,8 @@ $activeNav = "feedback";
 require_once('mvc/views/blocks/header_admin.php');
 ?>
 
-<div class="row" style="margin-top: 20px;">
-	<div class="col-md-12 table-responsive">
-		<h3>Feedback</h3>
+<div class="container-fluid px-4">
+	<h3 class="fs-4 mb-3">Feedback</h3>
 
 		<table class="table table-bordered table-hover" style="margin-top: 20px;">
 			<thead>
