@@ -24,11 +24,48 @@ foreach ($cart as $item) {
 <html lang="en">
 
 <head>
-    <title>Home 03</title>
+    <title>Style Shop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+
+
+    <link rel="icon" type="image/png"
+        href="http://localhost/style-shop-2022/public/http://localhost/style-shop-2022/public/images/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="http://localhost/style-shop-2022/public/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="http://localhost/style-shop-2022/public/vendor/css-hamburgers/hamburgers.min.css">
+
+    <link rel="stylesheet" type="text/css"
+        href="http://localhost/style-shop-2022/public/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="http://localhost/style-shop-2022/public/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/vendor/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="http://localhost/style-shop-2022/public/vendor/MagnificPopup/magnific-popup.css">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/vendor/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="http://localhost/style-shop-2022/public/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/css/util.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/css/main.css">
+
+
+
+    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/css/tin.css">
 
 
     <!-- Fontawesome -->
@@ -54,49 +91,6 @@ foreach ($cart as $item) {
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
-
-
-    <!-- ********************** -->
-
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png"
-        href="http://localhost/style-shop-2022/public/http://localhost/style-shop-2022/public/images/icons/favicon.png" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="http://localhost/style-shop-2022/public/vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="http://localhost/style-shop-2022/public/vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <!-- <link rel="stylesheet" type="text/css"
-        href="http://localhost/style-shop-2022/public/vendor/animsition/css/animsition.min.css"> -->
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="http://localhost/style-shop-2022/public/vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="http://localhost/style-shop-2022/public/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/vendor/slick/slick.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="http://localhost/style-shop-2022/public/vendor/MagnificPopup/magnific-popup.css">
-
-    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/vendor/slick/slick.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="http://localhost/style-shop-2022/public/vendor/perfect-scrollbar/perfect-scrollbar.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/css/util.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/css/main.css">
-
-
-
-    <link rel="stylesheet" type="text/css" href="http://localhost/style-shop-2022/public/css/style.css">
-    <!--===============================================================================================-->
-
 </head>
 
 <body class="animsition">
@@ -115,7 +109,7 @@ foreach ($cart as $item) {
                     <!-- Menu desktop -->
                     <div class="menu-desktop">
                         <ul class="main-menu">
-                            <li class="active-menu">
+                            <li>
                                 <a href="http://localhost/style-shop-2022/home">Home</a>
                             </li>
 
@@ -136,20 +130,42 @@ foreach ($cart as $item) {
                         </ul>
                     </div>
 
-                    
+
 
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
-                    <div style="margin-right: 20px;" class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php
+                        <div class="search__wrapper">
+                            <div class="search__input">
+                                <span> <i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input type="text" id="search__name">
+                            </div>
+                            <div class="search__box">
+                                <div class="search__box__content">
+                                    <div class="search__box__content__title">
+                                        <span>Kết quả</span>
+                                        <span class="btn-close"><i class="fa-solid fa-xmark"></i></span>
+                                    </div>
+                                    <div class="search-box-content__list">
+                                        <ul id="search__result">
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style=" margin-right: 20px;" class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?php
                     if (isset($fullname))
                         echo $fullname;
                     else echo '<i style="font-size: 27px;color:rgb(236, 79, 58)" class="far fa-user"></i>';
                     ?>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <?php
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <?php
                     if (!isset($fullname)) {
                         echo '<a class="dropdown-item" href="http://localhost/style-shop-2022/Login">Đăng nhập</a>';
                         echo '<a class="dropdown-item" href="http://localhost/style-shop-2022/Register">Đăng ký</a>';
@@ -162,21 +178,21 @@ foreach ($cart as $item) {
 
                     ?>
 
-                </div>
-            </div>
-
-                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-
-                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-                            data-notify="<?= $count ?>">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-
                     </div>
-                </nav>
+
+                    <!-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div> -->
+
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                        data-notify="<?= $count ?>">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
             </div>
+            </nav>
+        </div>
         </div>
 
         <!-- Header Mobile -->
@@ -190,17 +206,17 @@ foreach ($cart as $item) {
             <!-- Icon header -->
             <div class="wrap-icon-header flex-w flex-r-m m-r-15">
                 <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-                    <i class="zmdi zmdi-search"></i>
+
                 </div>
 
                 <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
                     data-notify="2">
-                    <i class="zmdi zmdi-shopping-cart"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
                 </div>
 
                 <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
                     data-notify="0">
-                    <i class="zmdi zmdi-favorite-outline"></i>
+                    <i class="fa-solid fa-heart"></i>
                 </a>
             </div>
 
@@ -214,78 +230,33 @@ foreach ($cart as $item) {
 
 
         <!-- Menu Mobile -->
-        <div class="menu-mobile">
-            <ul class="topbar-mobile">
-                <li>
-                    <div class="left-top-bar">
-                        Free shipping for standard order over $100
-                    </div>
-                </li>
-
-                <li>
-                    <div class="right-top-bar flex-w h-full">
-                        <a href="#" class="flex-c-m p-lr-10 trans-04">
-                            Help & FAQs
-                        </a>
-
-                        <a href="#" class="flex-c-m p-lr-10 trans-04">
-                            My Account
-                        </a>
-
-                        <a href="#" class="flex-c-m p-lr-10 trans-04">
-                            EN
-                        </a>
-
-                        <a href="#" class="flex-c-m p-lr-10 trans-04">
-                            USD
-                        </a>
-                    </div>
-                </li>
-            </ul>
-
+        <div class="menu-mobile-tin" style="height:0px; display:none">
             <ul class="main-menu-m">
                 <li>
-                    <a href="index.html">Home</a>
-
+                    <a href="http://localhost/style-shop-2022/home">Home</a>
                     <span class="arrow-main-menu-m">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </span>
                 </li>
 
                 <li>
-                    <a href="product.html">Shop</a>
+                    <a href="http://localhost/style-shop-2022/home/shop">Shop</a>
                 </li>
                 <li>
-                    <a href="blog.html">Blog</a>
-                </li>
-
-                <li>
-                    <a href="about.html">About</a>
+                    <a href="http://localhost/style-shop-2022/home/blog">Blog</a>
                 </li>
 
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="http://localhost/style-shop-2022/home/about">About</a>
+                </li>
+
+                <li>
+                    <a href="http://localhost/style-shop-2022/home/comtact">Contact</a>
                 </li>
             </ul>
         </div>
 
-        <!-- Modal Search -->
-        <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-            <div class="container-search-header">
-                <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-                    <img src="http://localhost/style-shop-2022/public/images/icons/icon-close2.png" alt="CLOSE">
-                </button>
 
-                <form class="wrap-search-header flex-w p-l-15"  method="POST" action="http://localhost/style-shop-2022/Home/search_button">
-                    <button class="flex-c-m trans-04">
-                        <i class="zmdi zmdi-search"></i>
-                    </button>
-                    <input class="plh3" type="text" id="search_name" name="search_name" placeholder="Search...">
-                </form>
-                <ul style="border-radius: 7px;width: 20%;position: fixed;z-index: 9999;background-color: #d2d3d4;right: 435px;top: 49px;" class="list-group" id="output_search">
-                </ul>
-            </div>
-        </div>
     </header>
 
     <!-- Cart -->
@@ -456,30 +427,58 @@ foreach ($cart as $item) {
     });
     </script>
 
-<script type="text/javascript">
-        $(document).ready(function() {
-            var action = "search";
-            $("#search_name").keyup(function() {
-                var search_name = $("#search_name").val();
-                if ($("#search_name").val() != '') {
-                    $.ajax({
-                        url: "http://localhost/style-shop-2022/Home/search",
-                        method: "POST",
-                        data: {
-                            action: action,
-                            search_name: search_name
-                        },
-                        success: function(data) {
-                            $("#output_search").html(data);
-                        }
-                    });
-                } else $("#output_search").html("");
-            });
-            $(window).click(function() {
-                //Hide the menus if visible
-                $("#output_search").html("");
-            });
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var action = "search";
+
+        $("#search__name").keyup(function() {
+            $(".search__box").show();
+            var search_name = $("#search__name").val();
+            console.log(search_name);
+            if ($("#search__name").val() != '') {
+                $.ajax({
+                    url: "http://localhost/style-shop-2022/Home/search",
+                    method: "POST",
+                    data: {
+                        action: action,
+                        search_name: search_name
+                    },
+                    success: function(data) {
+                        $("#search__result").html(data);
+                    }
+                });
+            } else $("#search__result").html("");
         });
+        $(window).click(function() {
+            //Hide the menus if visible
+            $("#search__result").html("");
+        });
+    });
+    </script>
+
+
+    <script>
+    $(".main-menu").on('click', 'li', function() {
+
+        $(this).addClass("active-menu").siblings().removeClass("active-menu");
+    });
+
+    $(".btn-close").on("click", function() {
+
+        $(".search__box").hide();
+    })
+    $(".btn-show-menu-mobile").on("click", function() {
+        $(this).toggleClass("is-active");
+        // $(".menu-mobile-tin").slideToggle();
+
+        if ($(".btn-show-menu-mobile").hasClass("is-active")) {
+            $(".menu-mobile-tin").css("display", "block");
+            $(".menu-mobile-tin").css("height", "100%");
+        } else {
+            $(".menu-mobile-tin").css("display", "none");
+            $(".menu-mobile-tin").css("height", "0%");
+        }
+    });
     </script>
     <!--===============================================================================================-->
     <script src="http://localhost/style-shop-2022/public/js/main.js"></script>

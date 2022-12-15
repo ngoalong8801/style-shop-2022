@@ -2,7 +2,9 @@
    <section class="section-slide">
        <div class="wrap-slick1 rs2-slick1">
            <div class="slick1">
-               <div class="item-slick1 bg-overlay1" style="background-image: url(http://localhost/style-shop-2022/public/images/slide-05.jpg);" data-thumb="http://localhost/style-shop-2022/public/images/thumb-01.jpg" data-caption="Women’s Wear">
+               <div class="item-slick1 bg-overlay1"
+                   style="background-image: url(http://localhost/style-shop-2022/public/images/slide-05.jpg);"
+                   data-thumb="http://localhost/style-shop-2022/public/images/thumb-01.jpg" data-caption="Women’s Wear">
                    <div class="container h-full">
                        <div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
                            <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
@@ -18,7 +20,8 @@
                            </div>
 
                            <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-                               <a href="http://localhost/style-shop-2022/home/productList" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                               <a href="http://localhost/style-shop-2022/home/productList"
+                                   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                                    Shop Now
                                </a>
                            </div>
@@ -26,7 +29,9 @@
                    </div>
                </div>
 
-               <div class="item-slick1 bg-overlay1" style="background-image: url(http://localhost/style-shop-2022/public/images/slide-06.jpg);" data-thumb="http://localhost/style-shop-2022/public/images/thumb-02.jpg" data-caption="Men’s Wear">
+               <div class="item-slick1 bg-overlay1"
+                   style="background-image: url(http://localhost/style-shop-2022/public/images/slide-06.jpg);"
+                   data-thumb="http://localhost/style-shop-2022/public/images/thumb-02.jpg" data-caption="Men’s Wear">
                    <div class="container h-full">
                        <div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
                            <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
@@ -42,7 +47,8 @@
                            </div>
 
                            <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                               <a href="http://localhost/style-shop-2022/home/productList" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                               <a href="http://localhost/style-shop-2022/home/productList"
+                                   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                                    Shop Now
                                </a>
                            </div>
@@ -50,23 +56,28 @@
                    </div>
                </div>
 
-               <div class="item-slick1 bg-overlay1" style="background-image: url(http://localhost/style-shop-2022/public/images/slide-07.jpg);" data-thumb="http://localhost/style-shop-2022/public/images/thumb-03.jpg" data-caption="Men’s Wear">
+               <div class="item-slick1 bg-overlay1"
+                   style="background-image: url(http://localhost/style-shop-2022/public/images/slide-07.jpg);"
+                   data-thumb="http://localhost/style-shop-2022/public/images/thumb-03.jpg" data-caption="Men’s Wear">
                    <div class="container h-full">
                        <div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
-                           <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
+                           <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft"
+                               data-delay="0">
                                <span class="ltext-202 txt-center cl0 respon2">
                                    Men Collection 2022
                                </span>
                            </div>
 
-                           <div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
+                           <div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight"
+                               data-delay="800">
                                <h2 class="ltext-104 txt-center cl0 p-t-22 p-b-40 respon1">
                                    NEW SEASON
                                </h2>
                            </div>
 
                            <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                               <a href="http://localhost/style-shop-2022/home/productList" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                               <a href="http://localhost/style-shop-2022/home/productList"
+                                   class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                                    Shop Now
                                </a>
                            </div>
@@ -88,7 +99,8 @@
                    <div class="block1 wrap-pic-w">
                        <img src="http://localhost/style-shop-2022/public/images/banner-04.jpg" alt="IMG-BANNER">
 
-                       <a href="http://localhost/style-shop-2022/home/productList" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                       <a href="http://localhost/style-shop-2022/home/productList"
+                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                            <div class="block1-txt-child1 flex-col-l">
                                <span class="block1-name ltext-102 trans-04 p-b-8">
                                    Shirt
@@ -111,9 +123,12 @@
                <div class="col-md-6 p-b-30 m-lr-auto">
                    <!-- Block1 -->
                    <div class="block1 wrap-pic-w">
-                       <img src="http://localhost/style-shop-2022/public/images/banner-05.jpg" alt="IMG-BANNER">
+                       <img height="362px" width="538px"
+                           src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGFudHN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+                           alt="IMG-BANNER">
 
-                       <a href="http://localhost/style-shop-2022/home/productList" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                       <a href="http://localhost/style-shop-2022/home/productList"
+                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                            <div class="block1-txt-child1 flex-col-l">
                                <span class="block1-name ltext-102 trans-04 p-b-8">
                                    Pants
@@ -136,9 +151,12 @@
                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
                    <!-- Block1 -->
                    <div class="block1 wrap-pic-w">
-                       <img src="http://localhost/style-shop-2022/public/images/banner-07.jpg" alt="IMG-BANNER">
+                       <img width="348px" height="226px"
+                           src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+                           alt="IMG-BANNER">
 
-                       <a href="http://localhost/style-shop-2022/home/productList" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                       <a href="http://localhost/style-shop-2022/home/productList"
+                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                            <div class="block1-txt-child1 flex-col-l">
                                <span class="block1-name ltext-102 trans-04 p-b-8">
                                    Shoes
@@ -161,9 +179,12 @@
                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
                    <!-- Block1 -->
                    <div class="block1 wrap-pic-w">
-                       <img src="http://localhost/style-shop-2022/public/images/banner-08.jpg" alt="IMG-BANNER">
+                       <img width="348px" height="226px"
+                           src="https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGF0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+                           alt="IMG-BANNER">
 
-                       <a href="http://localhost/style-shop-2022/home/productList" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                       <a href="http://localhost/style-shop-2022/home/productList"
+                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                            <div class="block1-txt-child1 flex-col-l">
                                <span class="block1-name ltext-102 trans-04 p-b-8">
                                    Hats
@@ -188,7 +209,8 @@
                    <div class="block1 wrap-pic-w">
                        <img src="http://localhost/style-shop-2022/public/images/banner-09.jpg" alt="IMG-BANNER">
 
-                       <a href="http://localhost/style-shop-2022/home/productList" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                       <a href="http://localhost/style-shop-2022/home/productList"
+                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                            <div class="block1-txt-child1 flex-col-l">
                                <span class="block1-name ltext-102 trans-04 p-b-8">
                                    Accessories
@@ -235,7 +257,7 @@
                </div>
 
                <div class="flex-w flex-c-m m-tb-10">
-                  
+
                    <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
                        <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
                        <i class="fa-solid fa-magnifying-glass cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close "></i> Search
@@ -243,24 +265,27 @@
                </div>
 
                <!-- Search product -->
-               <form class="dis-none panel-search w-full p-t-10 p-b-15 method="POST" action="http://localhost/style-shop-2022/Home/search_button">
+               <form class="dis-none panel-search w-full p-t-10 p-b-15" method="POST"
+                   action="http://localhost/style-shop-2022/Home/search_button">
                    <div class="bor8 dis-flex p-l-15">
                        <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
                            <i class="zmdi zmdi-search"></i>
                        </button>
 
-                       <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" id="search-product" name="search-product" placeholder="Search">
+                       <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" id="search-product"
+                           name="search-product" placeholder="Search">
                    </div>
                </form>
-               <ul style="border-radius: 7px;width: 20%;z-index: 9999;background-color: #d2d3d4;right: 435px;top: 49px;" class="list-group" id="output_search1">
-                </ul>
+               <ul style="border-radius: 7px;width: 20%;z-index: 9999;background-color: #d2d3d4;right: 435px;top: 49px;"
+                   class="list-group" id="output_search1">
+               </ul>
 
-             
-               </div>
+
            </div>
+       </div>
 
-           <div class="row isotope-grid">
-               <?php
+       <div class="row isotope-grid">
+           <?php
                 foreach ($data['allProduct'] as $product)
                     echo '<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ' . strtolower($product['category_name'])   . '">
             <!-- Block2 -->
@@ -290,46 +315,46 @@
             </div>
         </div>';
                 ?>
-           </div>
+       </div>
 
-           <!-- Pagination -->
-           <div class="flex-c-m flex-w w-full p-t-38">
-               <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
-                   1
-               </a>
+       <!-- Pagination -->
+       <div class="flex-c-m flex-w w-full p-t-38">
+           <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
+               1
+           </a>
 
-               <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
-                   2
-               </a>
-           </div>
+           <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
+               2
+           </a>
+       </div>
        </div>
    </section>
 
    <script type="text/javascript">
-        $(document).ready(function() {
-            var action = "search";
-            $("#search-product").keyup(function() {
-                var search_name = $("#search-product").val();
-                if ($("#search-product").val() != '') {
-                    $.ajax({
-                        url: "http://localhost/style-shop-2022/Home/search",
-                        method: "POST",
-                        data: {
-                            action: action,
-                            search_name: search_name
-                        },
-                        success: function(data) {
-                            $("#output_search1").html(data);
-                        }
-                    });
-                } else $("#output_search1").html("");
+$(document).ready(function() {
+    var action = "search";
+    $("#search-product").keyup(function() {
+        var search_name = $("#search-product").val();
+        if ($("#search-product").val() != '') {
+            $.ajax({
+                url: "http://localhost/style-shop-2022/Home/search",
+                method: "POST",
+                data: {
+                    action: action,
+                    search_name: search_name
+                },
+                success: function(data) {
+                    $("#output_search1").html(data);
+                }
             });
-            $(window).click(function() {
-                //Hide the menus if visible
-                $("#output_search1").html("");
-            });
-        });
-    </script>
+        } else $("#output_search1").html("");
+    });
+    $(window).click(function() {
+        //Hide the menus if visible
+        $("#output_search1").html("");
+    });
+});
+   </script>
 
    <!--===============================================================================================-->
 

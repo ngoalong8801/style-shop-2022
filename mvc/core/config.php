@@ -1,5 +1,5 @@
 <?php
 define('HOST', 'localhost');
-define('DATABASE', 'shop_ltw');
+define('DATABASE', 'shop');
 define('USERNAME', 'root');
 define('PASSWORD', '');
